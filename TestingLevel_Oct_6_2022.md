@@ -25,9 +25,9 @@ Consider the following types of defects that a test level might focus on:
 Which of the following list correctly matches test levels from the Foundation syllabus with
 the defect focus options given above?  
 
-a) 1 = performance test; 2 = component test; 3 = system test; 4 = acceptance test
-b) 1 = component test; 2 = acceptance test; 3 = system test; 4 = integration test
-c) 1 = component test; 2 = acceptance test; 3 = integration test; 4 = system test
-d) 1 = integration test; 2 = system test; 3 = component test; 4 = acceptance test
+a) 1 = performance test; 2 = component test; 3 = system test; 4 = acceptance test  
+b) 1 = component test; 2 = acceptance test; 3 = system test; 4 = integration test  
+c) 1 = component test; 2 = acceptance test; 3 = integration test; 4 = system test  
+d) 1 = integration test; 2 = system test; 3 = component test; 4 = acceptance test  
   
 **Answer: C**
