@@ -1,6 +1,6 @@
 # Question 4
 Which of the following statements comparing component testing and system testing is TRUE?  
-Answer: A. Component testing verifies the functionality of software modules, program objects, and classes that are separately testable, whereas system testing verifies interfaces between components and interactions between different parts of the system
+Answer: B. Test cases for component testing are usually derived from component specifications, design specifications, or data models, whereas test cases for system testing are usually derived from requirement specifications or use cases
 # Question 5
 Which of the following statements about test types and test levels is CORRECT?  
 Answer: C. It is possible to perform functional, non-functional and white-box testing at any test level
