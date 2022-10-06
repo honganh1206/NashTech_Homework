@@ -5,7 +5,7 @@ b) Test cases for component testing are usually derived from component specifica
 c) Component testing only focuses on functional characteristics, whereas system testing focuses on functional and non-functional characteristics  
 d) Component testing is the responsibility of the testers, whereas system testing typically is the responsibility of the users of the system  
   
-**Answer: B**
+**## Answer: B**
 # Question 5
 Which of the following statements about test types and test levels is CORRECT?  
 a) Functional and non-functional testing can be performed at system andacceptance test levels, while white-box testing is restricted to component and
@@ -14,7 +14,7 @@ b) Functional testing can be performed at any test level, while white-box testin
 c) It is possible to perform functional, non-functional and white-box testing at anytest level  
 d) Functional and non-functional testing can be performed at any test level, while white-box testing is restricted to component and integration testing  
   
-**Answer: C**
+**## Answer: C**
 # Question 6
 Consider the following types of defects that a test level might focus on:
 1. Defects in separately testable modules or objects
@@ -30,4 +30,4 @@ b) 1 = component test; 2 = acceptance test; 3 = system test; 4 = integration tes
 c) 1 = component test; 2 = acceptance test; 3 = integration test; 4 = system test  
 d) 1 = integration test; 2 = system test; 3 = component test; 4 = acceptance test  
   
-**Answer: C**
+**## Answer: C**
