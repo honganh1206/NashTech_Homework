@@ -1,17 +1,17 @@
 # Question 4
 Which of the following statements comparing component testing and system testing is TRUE?  
-a) Component testing verifies the functionality of software modules, program objects, and classes that are separately testable, whereas system testing verifies interfaces between components and interactions between different parts of the system
-b) Test cases for component testing are usually derived from component specifications, design specifications, or data models, whereas test cases for system testing are usually derived from requirement specifications or use cases
-c) Component testing only focuses on functional characteristics, whereas system testing focuses on functional and non-functional characteristics
+a) Component testing verifies the functionality of software modules, program objects, and classes that are separately testable, whereas system testing verifies interfaces between components and interactions between different parts of the system  
+b) Test cases for component testing are usually derived from component specifications, design specifications, or data models, whereas test cases for system testing are usually derived from requirement specifications or use cases  
+c) Component testing only focuses on functional characteristics, whereas system testing focuses on functional and non-functional characteristics  
 d) Component testing is the responsibility of the testers, whereas system testing typically is the responsibility of the users of the system  
   
 **Answer: B**
 # Question 5
 Which of the following statements about test types and test levels is CORRECT?  
 a) Functional and non-functional testing can be performed at system andacceptance test levels, while white-box testing is restricted to component and
-integration testing
-b) Functional testing can be performed at any test level, while white-box testing isrestricted to component testing
-c) It is possible to perform functional, non-functional and white-box testing at anytest level
+integration testing  
+b) Functional testing can be performed at any test level, while white-box testing isrestricted to component testing  
+c) It is possible to perform functional, non-functional and white-box testing at anytest level  
 d) Functional and non-functional testing can be performed at any test level, while white-box testing is restricted to component and integration testing  
   
 **Answer: C**
