@@ -25,109 +25,55 @@
               "title": "NUMBERS",
               "id": 23,
               "ideas": {
-                "4": {
-                  "title": "UI Testing",
+                "15.5": {
+                  "title": "Original price",
+                  "id": 54,
                   "attr": {
                     "style": {
-                      "backgroundColor": "#99CC00"
+                      "backgroundColor": "#00CCFF"
                     }
                   },
                   "ideas": {
-                    "2": {
-                      "title": "Size",
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      },
-                      "id": 36
-                    },
-                    "3": {
-                      "title": "Color",
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      },
-                      "id": 37
-                    },
-                    "4": {
-                      "title": "Font",
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      },
-                      "id": 38
-                    },
-                    "5": {
-                      "title": "Displayed currency",
-                      "id": 26,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    },
-                    "6": {
+                    "1": {
                       "title": "Commas as decimal separator",
                       "id": 24,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      },
                       "ideas": {
                         "1": {
-                          "title": "Between ₫0 and ₫1,000\n\n",
+                          "title": "0 comma between ₫0 and ₫999",
                           "id": 49
                         },
                         "2": {
-                          "title": "Between ₫1,000 and ₫1,000,000",
+                          "title": "1 comma between ₫1,000 and ₫999,999",
                           "id": 50
                         },
                         "3": {
-                          "title": "Between ₫1,000 and ₫1,000,000,000\n\n",
-                          "id": 51
-                        }
-                      }
-                    },
-                    "4.5": {
-                      "title": "Alignment ",
-                      "id": 48,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
+                          "title": "2 commas between ₫1,000,000 and ₫999,999,999",
+                          "id": 51,
+                          "ideas": {}
+                        },
+                        "4": {
+                          "title": "3 commas between ₫1,000,000,000 and ₫999,999,999,999",
+                          "id": 53,
+                          "attr": {}
                         }
                       }
                     }
-                  },
-                  "id": 34
+                  }
                 },
-                "14": {
-                  "title": "Functionality testing",
+                "15.75": {
+                  "title": "Discounted price",
+                  "id": 55,
+                  "ideas": {
+                    "1": {
+                      "title": "Discounted price rounded up to the nearest integer",
+                      "id": 25
+                    }
+                  },
                   "attr": {
                     "style": {
-                      "backgroundColor": "#99CC00"
-                    },
-                    "position": [
-                      90.00003814697266,
-                      58.000030517578125,
-                      1
-                    ]
-                  },
-                  "ideas": {
-                    "5": {
-                      "title": "Discounted price rounded up to the nearest integer",
-                      "id": 25,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
+                      "backgroundColor": "#00CCFF"
                     }
-                  },
-                  "id": 39
+                  }
                 }
               },
               "attr": {
@@ -135,8 +81,8 @@
                   "backgroundColor": "#00FFFF"
                 },
                 "position": [
-                  115.00003814697266,
-                  56,
+                  161.00003051757812,
+                  0.01043701171875,
                   1
                 ]
               }
@@ -156,41 +102,27 @@
               "title": "PHOTOS",
               "id": 4,
               "ideas": {
-                "1": {
-                  "title": "UI Testing",
-                  "id": 7,
-                  "ideas": {
-                    "1": {
-                      "title": "Number of photos",
-                      "id": 8,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "Photo size",
-                      "id": 9,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    },
-                    "3": {
-                      "title": "Photo displayed on the big frame",
-                      "id": 10,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    }
-                  },
+                "2": {
+                  "title": "Number of photos",
+                  "id": 8,
                   "attr": {
                     "style": {
-                      "backgroundColor": "#99CC00"
+                      "backgroundColor": "#00CCFF"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "The maximum number of photos in the photo list is between 1 and 5",
+                      "id": 52
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Photo displayed on the big frame",
+                  "id": 10,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#00CCFF"
                     }
                   }
                 }
@@ -205,89 +137,22 @@
               "title": "BUTTONS",
               "id": 6,
               "ideas": {
-                "1": {
-                  "title": "UI Testing",
-                  "id": 11,
+                "3": {
+                  "title": "<> buttons navigate between different product photos",
+                  "id": 20,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#00CCFF"
+                    }
+                  },
                   "ideas": {
                     "1": {
-                      "title": "Size",
-                      "id": 12,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
+                      "title": "> button navigates users to the next product photo but does not go above the 5th photo",
+                      "id": 46
                     },
                     "2": {
-                      "title": "Shape",
-                      "id": 13,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    },
-                    "3": {
-                      "title": "Color",
-                      "id": 14,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    },
-                    "4": {
-                      "title": "Alignment",
-                      "id": 15,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    },
-                    "5": {
-                      "title": "Clickability",
-                      "id": 45,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "backgroundColor": "#99CC00"
-                    }
-                  }
-                },
-                "2": {
-                  "title": "Functionality testing",
-                  "id": 16,
-                  "ideas": {
-                    "2": {
-                      "title": "<> buttons navigate between different product photos",
-                      "id": 20,
-                      "attr": {
-                        "style": {
-                          "backgroundColor": "#00CCFF"
-                        }
-                      },
-                      "ideas": {
-                        "1": {
-                          "title": "> button navigates users to the next product photo but does not go above the 5th photo",
-                          "id": 46
-                        },
-                        "2": {
-                          "title": "< button navigates users to the previous product photo but does not go above the 1st photo",
-                          "id": 47
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "backgroundColor": "#99CC00"
+                      "title": "< button navigates users to the previous product photo but does not go above the 1st photo",
+                      "id": 47
                     }
                   }
                 }
@@ -309,5 +174,17 @@
     }
   },
   "title": "VIEW PRODUCT FUNCTION",
-  "links": []
+  "links": [
+    {
+      "ideaIdFrom": 55,
+      "ideaIdTo": 24,
+      "attr": {
+        "style": {
+          "color": "#707070",
+          "lineStyle": "solid",
+          "arrow": "to"
+        }
+      }
+    }
+  ]
 }
