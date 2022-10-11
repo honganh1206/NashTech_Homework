@@ -1,0 +1,313 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "VIEW PRODUCT FUNCTION",
+      "id": 1,
+      "attr": {
+        "position": [
+          -88,
+          -23,
+          1
+        ],
+        "style": {
+          "backgroundColor": "#FF99CC",
+          "width": 144
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "PRICE DISPLAY",
+          "id": 2,
+          "ideas": {
+            "13": {
+              "title": "NUMBERS",
+              "id": 23,
+              "ideas": {
+                "4": {
+                  "title": "UI Testing",
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  },
+                  "ideas": {
+                    "2": {
+                      "title": "Size",
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      },
+                      "id": 36
+                    },
+                    "3": {
+                      "title": "Color",
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      },
+                      "id": 37
+                    },
+                    "4": {
+                      "title": "Font",
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      },
+                      "id": 38
+                    },
+                    "5": {
+                      "title": "Displayed currency",
+                      "id": 26,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "6": {
+                      "title": "Commas as decimal separator",
+                      "id": 24,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Between ₫0 and ₫1,000\n\n",
+                          "id": 49
+                        },
+                        "2": {
+                          "title": "Between ₫1,000 and ₫1,000,000",
+                          "id": 50
+                        },
+                        "3": {
+                          "title": "Between ₫1,000 and ₫1,000,000,000\n\n",
+                          "id": 51
+                        }
+                      }
+                    },
+                    "4.5": {
+                      "title": "Alignment ",
+                      "id": 48,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    }
+                  },
+                  "id": 34
+                },
+                "14": {
+                  "title": "Functionality testing",
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    },
+                    "position": [
+                      90.00003814697266,
+                      58.000030517578125,
+                      1
+                    ]
+                  },
+                  "ideas": {
+                    "5": {
+                      "title": "Discounted price rounded up to the nearest integer",
+                      "id": 25,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    }
+                  },
+                  "id": 39
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#00FFFF"
+                },
+                "position": [
+                  115.00003814697266,
+                  56,
+                  1
+                ]
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "backgroundColor": "#FFCC00"
+            }
+          }
+        },
+        "-1": {
+          "title": "PHOTO DISPLAY",
+          "id": 3,
+          "ideas": {
+            "1": {
+              "title": "PHOTOS",
+              "id": 4,
+              "ideas": {
+                "1": {
+                  "title": "UI Testing",
+                  "id": 7,
+                  "ideas": {
+                    "1": {
+                      "title": "Number of photos",
+                      "id": 8,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Photo size",
+                      "id": 9,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Photo displayed on the big frame",
+                      "id": 10,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#00FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "BUTTONS",
+              "id": 6,
+              "ideas": {
+                "1": {
+                  "title": "UI Testing",
+                  "id": 11,
+                  "ideas": {
+                    "1": {
+                      "title": "Size",
+                      "id": 12,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Shape",
+                      "id": 13,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Color",
+                      "id": 14,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Alignment",
+                      "id": 15,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "Clickability",
+                      "id": 45,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Functionality testing",
+                  "id": 16,
+                  "ideas": {
+                    "2": {
+                      "title": "<> buttons navigate between different product photos",
+                      "id": 20,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#00CCFF"
+                        }
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "> button navigates users to the next product photo but does not go above the 5th photo",
+                          "id": 46
+                        },
+                        "2": {
+                          "title": "< button navigates users to the previous product photo but does not go above the 1st photo",
+                          "id": 47
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#00FFFF"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "backgroundColor": "#FFCC00"
+            }
+          }
+        }
+      }
+    }
+  },
+  "title": "VIEW PRODUCT FUNCTION",
+  "links": []
+}
