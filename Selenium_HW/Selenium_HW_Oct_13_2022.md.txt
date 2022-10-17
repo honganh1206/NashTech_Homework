@@ -5,5 +5,5 @@
 5. //*[text()="Get it"]//following::*
 6. //*[contains(@class, "active")]//following-sibling::*
 7. //*[contains(@class, "active")]//following-sibling::*[1]
-8. //*[@class='btn' or @role='button']
-9. //a[@class='btn' and @role='button']
+8. //*[contains(@class,'btn') and text()='Watch it in action']
+9. //*[contains(@class,'btn') and @href='/documentation']
