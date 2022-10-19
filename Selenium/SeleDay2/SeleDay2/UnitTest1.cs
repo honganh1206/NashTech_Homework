@@ -4,11 +4,15 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 
-
-
-
-
-
+//• Launch the Chrome browser
+//• Open website “http://automationpractice.com/index.php”
+//• Print a Message to display that the website is opened successfully
+//• Click to “Contact Us” link on top menu to open Contact us page
+//• Verify the title of the form is “CUSTOMER SERVICE - CONTACT US”
+//• Come back to Home page (Use ‘Back’ command)
+//• Verify the title of page is “My store”
+//• Again go back to Contact us page (This time use ‘Forward’ command)
+//• Close the Browser
 
 namespace SeleDay2
 {
@@ -38,7 +42,11 @@ namespace SeleDay2
             var contactUsButtonLocator = By.XPath("//*[text()='Contact us']");
             Click(contactUsButtonLocator);
             // Verify the title of the form is “CUSTOMER SERVICE - CONTACT US”
-            //var customerServiceTitleLocator = B
+            var customerServiceTitlelocator = By.XPath("//*[text()='Customer service - Contact us");
+            IWebElement customerServiceTitle = _driver.FindElement(customerServiceTitlelocator);
+            _wait.Until(SeleniumExtras.WaitHelpers.
+                ExpectedConditions.ElementIsVisible(customerServiceTitlelocator));
+            string titleText = 
 
 
 
