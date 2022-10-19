@@ -1,9 +1,0 @@
-1. //*[text()='Watch it in action']
-2. //li
-3. //*[text()="Get it"]//preceding::*
-4. //*[contains(@class, "active")]//preceding-sibling::*
-5. //*[text()="Get it"]//following::*
-6. //*[contains(@class, "active")]//following-sibling::*
-7. //*[contains(@class, "active")]//following-sibling::*[1]
-8. //*[contains(@class,'btn') and text()='Watch it in action']
-9. //*[contains(@class,'btn') and @href='/documentation']
