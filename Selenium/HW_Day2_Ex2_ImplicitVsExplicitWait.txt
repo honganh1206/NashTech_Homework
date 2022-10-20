@@ -1,0 +1,57 @@
+# Implicit wait
+An implicit wait tells WebDriver to give the DOM a certain amount of time 
+when trying to find any element (or elements) not immediately available.
+
+# Explicit wait
+An explicit wait is a code you define to wait for a certain condition to occur 
+before proceeding further in the code 
+
+# Differences
+## 1
+Implicit waits are more like general waits for everything (wait at most X seconds for every element you interact with).
+Explicit waits are specific waits for something to happen or until time elapses (wait for X seconds until this button is clickable/visible).
+
+## 2
+Implicit wait adds extra wait time and can overwrite explicit waits if unexpected. 
+
+## 3
+An implicit wait is a single line of code that applies to everything for that session, easier to code, and more prone to failure.
+Explicit waits waits for specific conditions 
+(you can wait for a button to be clickable or a label to visible, requires more coding but you can adjust the waits to what you need) 
+
+## Conclusion
+Avoid implicit wait and use explicit wait.
+
+
+---
+Write wait methods using explicit wait method to wait:
+• Wait for an element is displayed
+
+        public IWebElement ReturnWebElement(By by)
+        {
+            IWebElement e = _driver.FindElement(by);
+            _wait.Until(SeleniumExtras.WaitHelpers.
+                ExpectedConditions.ElementIsVisible(by));
+            return e;
+        }
+
+• Wait for an element is clickable
+
+
+        public IWebElement ReturnWebElement(By by)
+        {
+            IWebElement e = _driver.FindElement(by);
+		_wait.Until(SeleniumExtras.WaitHelpers.
+   			 ExpectedConditions.ElementToBeClickable(by));
+		return e;
+        }
+
+• Wait for an element is selected
+
+        public IWebElement ReturnWebElement(By by)
+        {
+            IWebElement e = _driver.FindElement(by);
+		_wait.Until(SeleniumExtras.WaitHelpers.
+    			ExpectedConditions.ElementToBeSelected(by));
+		return e;
+        }

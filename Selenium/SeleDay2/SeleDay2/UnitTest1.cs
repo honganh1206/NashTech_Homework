@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using Assert = NUnit.Framework.Assert;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 // SCENARIO 1
 //• Launch the Chrome browser
