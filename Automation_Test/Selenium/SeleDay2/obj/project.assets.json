@@ -10423,11 +10423,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Selenium\\SeleDay2\\SeleDay2\\HWSeleDay2.csproj",
+      "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj",
       "projectName": "HWSeleDay2",
-      "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Selenium\\SeleDay2\\SeleDay2\\HWSeleDay2.csproj",
+      "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Selenium\\SeleDay2\\SeleDay2\\obj\\",
+      "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

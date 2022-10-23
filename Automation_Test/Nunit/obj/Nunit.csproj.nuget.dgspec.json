@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj": {}
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Nunit\\Nunit.csproj": {}
   },
   "projects": {
-    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj": {
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Nunit\\Nunit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj",
-        "projectName": "HWSeleDay2",
-        "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj",
+        "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Nunit\\Nunit.csproj",
+        "projectName": "Nunit",
+        "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Nunit\\Nunit.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\obj\\",
+        "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Nunit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,22 +40,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "DotNetSeleniumExtras.WaitHelpers": {
-              "target": "Package",
-              "version": "[3.11.0, )"
-            },
-            "ExtentReports": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[2.2.8, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[2.2.8, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
@@ -64,21 +48,13 @@
               "target": "Package",
               "version": "[3.13.3, )"
             },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.2.1, )"
-            },
-            "Selenium.Support": {
-              "target": "Package",
-              "version": "[4.5.1, )"
-            },
-            "Selenium.WebDriver": {
-              "target": "Package",
-              "version": "[4.5.1, )"
-            },
-            "Selenium.WebDriver.ChromeDriver": {
-              "target": "Package",
-              "version": "[106.0.5249.6100, )"
             },
             "coverlet.collector": {
               "target": "Package",

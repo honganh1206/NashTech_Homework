@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lh1UBprCfkKWkdQMcNjpW89X/MUkOoR++TPPhxLfTCJEaPeNHU/aatBGGPK6bOei0o39NDZtd5GzRwDy5XIUMg==",
+  "dgSpecHash": "WLQbMJLIWgZctzmRoBvMxBTecSVDhQun5BYDUnFteKZ2in7XUZfNdNPqq1viUerK6Rvkm0rNE64ZGsw4E3um8A==",
   "success": true,
-  "projectFilePath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Selenium\\SeleDay2\\SeleDay2\\HWSeleDay2.csproj",
+  "projectFilePath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Selenium\\SeleDay2\\HWSeleDay2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\dnsclient\\1.2.0\\dnsclient.1.2.0.nupkg.sha512",
