@@ -22,11 +22,16 @@ namespace SeleDay2
     [TestClass]
     public class TestingScenario
     {
-        // shared vars
+        // Vars
         protected WebDriverWait _wait;
         protected IWebDriver _driver;
         protected string EXPECTED_FORM_TITLE = "CUSTOMER SERVICE - CONTACT US";
         protected string EXPECTED_PAGE_TITLE = "My Store"; // typo from "Store" to "store"
+
+        // Locators
+        private By contactUsButton = By.XPath("//*[text()='Contact us']");
+        private By customerServiceTitle = By.XPath("//*[contains(@class, 'page-heading')]");
+
         [SetUp]
         // prepare chromedriver
         public void SetUp()
@@ -43,14 +48,12 @@ namespace SeleDay2
             Console.WriteLine("The website is opened successfully");
 
             // Click to “Contact Us” link on top menu to open Contact us page
-            var contactUsButtonLocator = By.XPath("//*[text()='Contact us']");
-            IWebElement contactUsButton =  ReturnWebElement(contactUsButtonLocator);
-            contactUsButton.Click();
+            IWebElement getContactUsButton =  ReturnWebElement(contactUsButton);
+            getContactUsButton.Click();
 
             // Verify the title of the form is “CUSTOMER SERVICE - CONTACT US”
-            var customerServiceTitlelocator = By.XPath("//*[contains(@class, 'page-heading')]");
-            IWebElement customerServiceTitle = ReturnWebElement(customerServiceTitlelocator);
-            Assert.That(customerServiceTitle.Text, Is.EqualTo(EXPECTED_FORM_TITLE));
+            IWebElement getCustomerServiceTitle = ReturnWebElement(customerServiceTitle);
+            Assert.That(getCustomerServiceTitle.Text, Is.EqualTo(EXPECTED_FORM_TITLE));
             Console.WriteLine("Text Box Title validated successfully");
 
             // Come back to Home page (Use ‘Back’ command)
