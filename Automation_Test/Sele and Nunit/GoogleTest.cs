@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -38,7 +37,6 @@ namespace NunitPractice
 
         //1.Going to Google Search home page
         //2. Input any text to search
-        [TestMethod]
         public void EnterSearch()
         {
             _driver.Navigate().GoToUrl(GOOGLE_URL);
@@ -62,16 +60,10 @@ namespace NunitPractice
             //4. Click on 1st result, verify any text in this screen
             IWebElement getSignUpBtnText = ReturnWebElement(signUpBtn);
             Assert.That(getSignUpBtnText.Text, Is.EqualTo(SIGNUP_TEXT));
-
-        }
-
-        private object That(string text, EqualConstraint equalConstraint)
-        {
-            throw new NotImplementedException();
+            CleanUpTest();
         }
 
         // Find and click elems
-        [TestMethod]
         public IWebElement ReturnWebElement(By by)
         {
             IWebElement e = _driver.FindElement(by);
