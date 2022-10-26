@@ -3,7 +3,6 @@ using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using SeleAndNunit.Pages;
 using Assert = NUnit.Framework.Assert;
 
 //‒ Create a Project using Selenium (C#) and Nunit
@@ -39,6 +38,7 @@ namespace NunitPractice
 
         //1.Going to Google Search home page
         //2. Input any text to search
+        [TestMethod]
         public void EnterSearch()
         {
             _driver.Navigate().GoToUrl(GOOGLE_URL);
