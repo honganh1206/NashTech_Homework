@@ -67,8 +67,8 @@ namespace NunitPractice
         public IWebElement ReturnWebElement(By by)
         {
             IWebElement e = _driver.FindElement(by);
-            //_wait.Until(SeleniumExtras.WaitHelpers.
-            //    ExpectedConditions.ElementIsVisible(by));
+            _wait.Until(SeleniumExtras.WaitHelpers.
+                ExpectedConditions.ElementIsVisible(by));
             return e;
         }
 
