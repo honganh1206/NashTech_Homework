@@ -2,13 +2,13 @@
 
 namespace Nunit.POM
 {
-    public class Pages
+    public class Pages : HeaderPage
     {
         private readonly IWebDriver? _driver;
         private readonly By firstResult;
         private readonly By signUpBtn; 
 
-        public Pages(IWebDriver? driver)
+        public Pages(IWebDriver? driver) : base(driver)
         {
             _driver = driver;
         }
