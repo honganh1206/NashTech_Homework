@@ -24,6 +24,8 @@ namespace Nunit
         protected string SIGNUP_TEXT = "Sign Up";
         // Locators
         private By searchBox = By.XPath("//*[contains(@title,'Tìm kiếm')]");
+
+        // Locators for requirement 4 (line 13)
         private By firstResult = By.TagName("h3");
         private By signUpBtn = By.XPath("//*[contains(@href,'https://www.reddit.com/register/?dest=https%3A%2F%2Fwww.reddit.com%2F')]");
 
@@ -56,6 +58,9 @@ namespace Nunit
             //4. Click on 1st result, verify any text in this screen
             //_driver.Click(page.linkToFirstResult());
             ////Assert.That(SIGNUP_TEXT, Is.EqualTo()
+            
+            // End test
+            CleanUpTest();
         }
 
         [TestCleanup]
