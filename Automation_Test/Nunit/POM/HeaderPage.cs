@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
 using OpenQA.Selenium;
 
 namespace Nunit.POM
@@ -10,7 +7,7 @@ namespace Nunit.POM
     public class HeaderPage
     {
         private readonly IWebDriver? _driver;
-        private By searchBox = By.XPath("//*[contains(@title,'Tìm kiếm')]");
+        private readonly By searchBox = By.XPath("//*[contains(@title,'Tìm kiếm')]");
         //private By searchBtn;
 
         public HeaderPage(IWebDriver? driver)
@@ -22,6 +19,7 @@ namespace Nunit.POM
         {
             return _driver?.FindElement(searchBox);
         }
+        // If there is one (Like YouTube)
         //public IWebElement? GetSearchButton()
         //{
         //    return _driver?.FindElement(searchBtn);

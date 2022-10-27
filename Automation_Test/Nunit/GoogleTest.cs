@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Assert = NUnit.Framework.Assert;
 using Nunit.POM;
+using SeleniumExtras.WaitHelpers;
 
 //‒ Create a Project using Selenium (C#) and Nunit
 //‒ Convert Project to Page Object Design with following steps:
@@ -24,10 +25,11 @@ namespace Nunit
         protected string SIGNUP_TEXT = "Sign Up";
         // Locators
         private By searchBox = By.XPath("//*[contains(@title,'Tìm kiếm')]");
-
-        // Locators for requirement 4 (line 13)
-        //private By firstResult = By.TagName("h3");
-        //private By signUpBtn = By.XPath("//*[contains(@href,'https://www.reddit.com/register/?dest=https%3A%2F%2Fwww.reddit.com%2F')]");
+        private By firstResult = By.XPath(
+            "//*[contains(@h3,\"\") and text()= 'Reddit - Dive into anything']");
+        private By signUpBtn = By.XPath(
+            "//*[contains(@href," +
+            "'https://www.reddit.com/register/?dest=https%3A%2F%2Fwww.reddit.com%2F')]");
 
 
         [SetUp]
@@ -45,6 +47,7 @@ namespace Nunit
             //2. Input any text to search
             _driver.Navigate().GoToUrl(GOOGLE_URL);
             _driver.Manage().Window.Maximize();
+            Pages page = new Pages(_driver);
             HeaderPage headerPage = new HeaderPage(_driver);
             headerPage.Search(SEARCH_INPUT);
             headerPage.Enter(searchBox);
@@ -52,13 +55,18 @@ namespace Nunit
             //3. Reach to result screen, verify Title of this screen is matching with text in step 2
             string pageTitle = _driver.Title;
             string stringBeforeDash = pageTitle.Substring(0, pageTitle.IndexOf("-"));
-            Assert.That(SEARCH_INPUT, Is.EqualTo(stringBeforeDash.Trim()));
+            Assert.That(stringBeforeDash.Trim(), Is.EqualTo(SEARCH_INPUT));
 
             //4. Click on 1st result, verify any text in this screen
-            //_driver.Click(page.linkToFirstResult());
-            ////Assert.That(SIGNUP_TEXT, Is.EqualTo()
+            IWebElement getFirstResult = page.getElem(firstResult);
+            getFirstResult.Click();
+
+            IWebElement getSignUpBtn = page.getElem(signUpBtn);
+            _wait.Until(ExpectedConditions.ElementIsVisible(signUpBtn));
+            Assert.That(getSignUpBtn.Text, Is.EqualTo(SIGNUP_TEXT));
             
             // End test
+            _driver.Close();
             CleanUpTest();
         }
 

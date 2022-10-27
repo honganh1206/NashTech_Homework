@@ -7,21 +7,16 @@ namespace Nunit.POM
         private readonly IWebDriver? _driver;
 
         // for req 4
-        private readonly By firstResult;
-        //private readonly By signUpBtn; 
+        //private readonly By firstResult;
+        //private readonly ; 
 
         public Pages(IWebDriver? driver) : base(driver)
         {
             _driver = driver;
         }
-        public string? linkToFirstResult()
+        public IWebElement? getElem(By elem)
         {
-            return _driver?.FindElement(firstResult).GetAttribute("href");
+            return _driver?.FindElement(elem);
         }
-        //public string? getSignUpBtn()
-        //{
-        //    IWebElement getSignUpBtn = _driver?.FindElement(signUpBtn);
-        //    return getSignUpBtn
-        //}
     }
 }

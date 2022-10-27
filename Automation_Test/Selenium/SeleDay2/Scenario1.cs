@@ -28,8 +28,8 @@ namespace SeleDay2
         protected string EXPECTED_PAGE_TITLE = "My Store"; // typo from "Store" to "store"
 
         // Locators
-        private By contactUsButton = By.XPath("//*[text()='Contact us']");
-        private By customerServiceTitle = By.XPath("//*[contains(@class, 'page-heading')]");
+        protected By contactUsBtn = By.XPath("//*[text()='Contact us']");
+        protected By customerServiceTitle = By.XPath("//*[contains(@class, 'page-heading')]");
 
         [SetUp]
         // prepare chromedriver
@@ -47,8 +47,8 @@ namespace SeleDay2
             Console.WriteLine("The website is opened successfully");
 
             // Click to “Contact Us” link on top menu to open Contact us page
-            IWebElement getContactUsButton =  ReturnWebElement(contactUsButton);
-            getContactUsButton.Click();
+            IWebElement getContactUsBtn =  ReturnWebElement(contactUsBtn);
+            getContactUsBtn.Click();
 
             // Verify the title of the form is “CUSTOMER SERVICE - CONTACT US”
             IWebElement getCustomerServiceTitle = ReturnWebElement(customerServiceTitle);
