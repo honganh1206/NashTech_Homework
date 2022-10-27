@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace SeleAndNunit.Pages
+namespace Nunit.POM
 {
-    internal class HeaderPage
+    public class HeaderPage
     {
         private readonly IWebDriver? _driver;
-        private readonly By searchBox = By.XPath("//*");
-        private readonly By searchButton = By.XPath("//*");
-        
+        private By searchBox = By.XPath("//*[contains(@title,'Tìm kiếm')]");
+        //private By searchBtn;
+
         public HeaderPage(IWebDriver? driver)
         {
             _driver = driver;
@@ -22,23 +22,22 @@ namespace SeleAndNunit.Pages
         {
             return _driver?.FindElement(searchBox);
         }
-
-        public IWebElement? GetSearchButton()
-        {
-            return _driver?.FindElement(searchButton);
-        }
+        //public IWebElement? GetSearchButton()
+        //{
+        //    return _driver?.FindElement(searchBtn);
+        //}
 
         // Input keywords
         public HeaderPage Search(string keyword)
         {
             GetSearchBox()?.Clear();
-            GetSearchButton()?.SendKeys(keyword);
+            GetSearchBox()?.SendKeys(keyword);
             return this;
         }
-        public VideoPage ClickSearchButton()
+        public Pages Enter(By searchBox)
         {
-            GetSearchButton()?.Click();
-            return new VideoPage(_driver);
+            GetSearchBox()?.SendKeys(Keys.Enter);
+            return new Pages(_driver);
         }
 
     }
