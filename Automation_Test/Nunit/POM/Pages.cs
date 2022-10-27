@@ -8,7 +8,7 @@ namespace Nunit.POM
 
         // for req 4
         private readonly By firstResult;
-        private readonly By signUpBtn; 
+        //private readonly By signUpBtn; 
 
         public Pages(IWebDriver? driver) : base(driver)
         {
