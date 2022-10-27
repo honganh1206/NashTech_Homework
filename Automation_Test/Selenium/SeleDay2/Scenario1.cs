@@ -67,6 +67,7 @@ namespace SeleDay2
 
             // Close the Browser
             _driver.Close();
+            CleanUp();
 
         }
 
