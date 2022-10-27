@@ -6,17 +6,25 @@ namespace Nunit.POM
     {
         private readonly IWebDriver? _driver;
 
-        // for req 4
-        //private readonly By firstResult;
-        //private readonly ; 
-
         public Pages(IWebDriver? driver) : base(driver)
         {
             _driver = driver;
         }
-        public IWebElement? getElem(By elem)
+
+        private By firstResult = By.XPath(
+            "//*[contains(@h3,\"\") and text()= 'Reddit - Dive into anything']");
+        public IWebElement? getFirstResult()
         {
-            return _driver?.FindElement(elem);
+            return _driver?.FindElement(firstResult);
+        }
+
+        private By signUpBtn = By.XPath(
+            "//*[contains(@href," +
+            "'https://www.reddit.com/register/?dest=https%3A%2F%2Fwww.reddit.com%2F')]");
+        
+        public IWebElement? getSignUpBtn()
+        {
+            return _driver?.FindElement(signUpBtn);
         }
     }
 }

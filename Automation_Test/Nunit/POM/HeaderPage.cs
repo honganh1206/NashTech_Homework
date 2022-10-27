@@ -32,7 +32,7 @@ namespace Nunit.POM
             GetSearchBox()?.SendKeys(keyword);
             return this;
         }
-        public Pages Enter(By searchBox)
+        public Pages Enter()
         {
             GetSearchBox()?.SendKeys(Keys.Enter);
             return new Pages(_driver);

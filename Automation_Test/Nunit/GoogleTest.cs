@@ -23,13 +23,6 @@ namespace Nunit
         protected string GOOGLE_URL = "https://www.google.com/";
         protected string SEARCH_INPUT = "reddit";
         protected string SIGNUP_TEXT = "Sign Up";
-        // Locators
-        private By searchBox = By.XPath("//*[contains(@title,'Tìm kiếm')]");
-        private By firstResult = By.XPath(
-            "//*[contains(@h3,\"\") and text()= 'Reddit - Dive into anything']");
-        private By signUpBtn = By.XPath(
-            "//*[contains(@href," +
-            "'https://www.reddit.com/register/?dest=https%3A%2F%2Fwww.reddit.com%2F')]");
 
 
         [SetUp]
@@ -50,7 +43,7 @@ namespace Nunit
             Pages page = new Pages(_driver);
             HeaderPage headerPage = new HeaderPage(_driver);
             headerPage.Search(SEARCH_INPUT);
-            headerPage.Enter(searchBox);
+            headerPage.Enter();
 
             //3. Reach to result screen, verify Title of this screen is matching with text in step 2
             string pageTitle = _driver.Title;
@@ -58,11 +51,10 @@ namespace Nunit
             Assert.That(stringBeforeDash.Trim(), Is.EqualTo(SEARCH_INPUT));
 
             //4. Click on 1st result, verify any text in this screen
-            IWebElement getFirstResult = page.getElem(firstResult);
+            IWebElement getFirstResult = page.getFirstResult();
             getFirstResult.Click();
 
-            IWebElement getSignUpBtn = page.getElem(signUpBtn);
-            _wait.Until(ExpectedConditions.ElementIsVisible(signUpBtn));
+            IWebElement getSignUpBtn = page.getSignUpBtn();
             Assert.That(getSignUpBtn.Text, Is.EqualTo(SIGNUP_TEXT));
             
             // End test
