@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\TestProject1\\CoreFramework.csproj": {}
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\CoreFramework\\CoreFramework.csproj": {}
   },
   "projects": {
-    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\TestProject1\\CoreFramework.csproj": {
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\CoreFramework\\CoreFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\TestProject1\\CoreFramework.csproj",
+        "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\CoreFramework\\CoreFramework.csproj",
         "projectName": "CoreFramework",
-        "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\TestProject1\\CoreFramework.csproj",
+        "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\CoreFramework\\CoreFramework.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\TestProject1\\obj\\",
+        "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\CoreFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

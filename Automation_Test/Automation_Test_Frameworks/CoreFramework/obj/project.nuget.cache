@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tUy601Cf2J7WCqmb2x9VZfwPGCli1iFqWvF3niowMto4wRelSkgs5dTitUwTWkwi1izAXG8uvANHNe4xCkysDA==",
+  "dgSpecHash": "xvitJrdDI7OzaUe7Jfsxfg5recwvmeagqgcua4WblqfoOKyXWortdf6R47+KpyPBelaajPpERWZ4VlsATz/3WQ==",
   "success": true,
-  "projectFilePath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\TestProject1\\CoreFramework.csproj",
+  "projectFilePath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\Automation_Test_Frameworks\\CoreFramework\\CoreFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\dnsclient\\1.2.0\\dnsclient.1.2.0.nupkg.sha512",
