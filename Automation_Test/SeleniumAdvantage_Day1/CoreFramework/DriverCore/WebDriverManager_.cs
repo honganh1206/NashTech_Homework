@@ -38,7 +38,16 @@ namespace TestProject1.DriverCore
 
         public static IWebDriver GetCurrentDriver()
         {
+            return driver.Value;
+        }
 
+        public static void CloseDriver()
+        {
+            if (driver.Value != null)
+            {
+                driver.Value.Quit();
+                driver.Value.Dispose();
+            }
         }
     }
 }

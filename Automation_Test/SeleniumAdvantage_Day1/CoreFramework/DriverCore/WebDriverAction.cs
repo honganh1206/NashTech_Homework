@@ -38,27 +38,37 @@ namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
             return By.XPath(locator);
         }
 
-        public string getTitle()
+        public string GetTitle()
         {
             return driver.Title;
         }
 
         public IWebElement FindElementByXpath(string locator)
         {
-            return driver.FindElement(GetXpath(locator));
+            IWebElement e = driver.FindElement(GetXpath(locator));
+            HighlightElem(e);
+            return e;
+        }
+        public IList<IWebElement> FindElementsByXpath(string locator)
+        {
+            return driver.FindElements(GetXpath(locator));
         }
         // Two clicks fo different platforms
         public void Click(string locator)
         {
+            // for retrying
+            //var interval = 5;
+            //var current = 1;
             try
             {
+
                 FindElementByXpath(locator).Click();
-                TestContext.WriteLine("Clicking on element [" + locator.ToString() + "] passed");
+                TestContext.WriteLine("Clicking on element [" + locator + "] passed");
 
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Clicking on element [" + locator.ToString() + "] failed");
+                TestContext.WriteLine("Clicking on element [" + locator + "] failed");
                 throw excep;
             }
         }
@@ -66,6 +76,7 @@ namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
         {
             try
             {
+                HighlightElem(e);
                 e.Click();
                 TestContext.WriteLine("Clicking on element [" + e.ToString() + "] passed");
             }
@@ -75,15 +86,38 @@ namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
-        public void SendKeys_(IWebElement e, string key)
+        public void SendKeys_(string locator, string key)
         {
             try
             {
-                e.SendKeys(key);
+                FindElementByXpath(locator).SendKeys(key);
+                TestContext.WriteLine("Sendkeys to element [" + locator + "] passed");
+
             }
             catch (Exception excep)
             {
+                TestContext.WriteLine("Sendkeys to element [" + locator + "] failed");
                 throw excep;
+            }
+        }
+        // Add more actions
+        public IWebElement HighlightElem(IWebElement e)
+        {
+            try
+            {
+                IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
+                string highlightJavascript = @"$(arguments[0]).css({ ""border-width"" : 
+                        ""2px"", ""border-style"" : ""solid"", ""border-color"" : ""red"" });";
+                jsDriver.ExecuteScript(highlightJavascript, new object[] { e });
+                TestContext.WriteLine("Highlight element [" + e.ToString() + "] passed");
+                return e;
+
+            }
+            catch (Exception excep)
+            {
+                TestContext.WriteLine("Highlight element [" + e.ToString() + "] failed");
+                throw excep;
+
             }
         }
     }
