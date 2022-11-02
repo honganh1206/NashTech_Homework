@@ -56,12 +56,12 @@ namespace TestProject1.DriverCore
             else if (Browser.SequenceEqual("chrome"))
             {
                 //new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-                Driver = new FirefoxDriver();
+                Driver = new ChromeDriver();
             }
             else if (Browser.SequenceEqual("safari"))
             {
                 //new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-                Driver = new FirefoxDriver();
+                Driver = new SafariDriver();
             }
             // commands after starting driver
             Driver.Manage().Window.Maximize();
