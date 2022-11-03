@@ -7,6 +7,10 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using CoreFramework.DriverCore;
+using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace CoreFramework.NUnitTestSetup
 {
@@ -16,28 +20,47 @@ namespace CoreFramework.NUnitTestSetup
         // Check Add Project Preference 
         public IWebDriver? _driver;
         public WebDriverAction? driverBaseAction;
+        protected ExtentReports? _extentReport;
+        protected ExtentTest? _extentTest;
+
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
+        {
+            _extentReport = new ExtentReports();
+            string reportPath = TestContext.CurrentContext.TestDirectory;
+            var reporter = new ExtentHtmlReporter($"{reportPath}\\Reports\\" +
+                $"Report-{DateTime.UtcNow.ToString("yyyy_MM_dd_HH_mm_ss")}\\");
+            _extentReport.AttachReporter(reporter);
+        }
 
         [SetUp]
         public void SetUp()
         {
             WebDriverManager_.InitDriver("chrome", 1920, 1080);
             _driver = WebDriverManager_.GetCurrentDriver();
+            driverBaseAction = new WebDriverAction(_driver);
+            _extentTest = _extentReport.CreateTest($"{TestContext.CurrentContext.Test.Name}");
         }
 
         [TearDown]
         public void TearDown()
         {
             _driver?.Quit();
+            // Report results on ExtentRep
             TestStatus testStatus = TestContext.CurrentContext.Result.Outcome.Status;
             if (testStatus.Equals(TestStatus.Passed))
             {
-                TestContext.WriteLine("Passed");
+                _extentTest?.Pass($"[Passed] Test {TestContext.CurrentContext.Test.Name}");
+
             }
             else if (testStatus.Equals(TestStatus.Failed))
             {
-                TestContext.WriteLine("Failed");
-                driverBaseAction.TakeMultipleScreenShots();
+                // Unfinished error message TestExecution?
+                _extentTest?.Fail($"[Failed] Test {TestContext.CurrentContext?.Test.Name}" +
+                    $"because of the error \n");
             }
+            // Delete?
+            _extentReport.Flush();
         }
     }
 }

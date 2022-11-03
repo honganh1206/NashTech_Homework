@@ -20,6 +20,10 @@ namespace SeleniumAdvantage_Day2.PageObj
         {
             Click((FindElementByXpath(firstResult)));
         }
+        public string GetTitleBeforeDash()
+        {
+            return GetTitle().Substring(0, GetTitle().IndexOf("-")).Trim();
+        }
 
     }
 

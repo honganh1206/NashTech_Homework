@@ -32,7 +32,7 @@
 //            _extentReport = new ExtentReports();
 //            string reportPath = TestContext.CurrentContext.TestDirectory;
 //            var reporter = new ExtentHtmlReporter($"{reportPath}\\Reports\\" +
-//                $"Report-{DateTime.UtcNow.ToString("yyyy_MM_dd_HH_mm_ss")}");
+//                $"Report-{DateTime.UtcNow.ToString("yyyy_MM_dd_HH_mm_ss")}\\");
 //            _extentReport.AttachReporter(reporter);
 //              _extentTestSuite
 

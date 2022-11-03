@@ -191,6 +191,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             var VNDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(utcDate, "SE Asia Standard Time");
             // output the GMT+7 time in Vietnam
             string currentTimeVN = VNDate.ToString("yyyy_MM_dd_HH_mm_ss", VNCulture);
+            //string currentTimeVN = DateTime.UtcNow.ToString("yyyy_MM_dd_HH_mm_ss");
             return currentTimeVN;
         }
 
