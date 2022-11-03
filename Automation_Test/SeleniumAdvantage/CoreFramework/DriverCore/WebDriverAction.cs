@@ -144,10 +144,20 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
 
         public void ScreenShot()
         {
-            Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-            ss.SaveAsFile($"D://NashTech//Rookies//NashTech_Homework//Automation_Test" +
-                $"//SeleniumAdvantage//RookiesTest//" +
-                $"bin//Screenshot//Firefox.png", ScreenshotImageFormat.Png);
+            try
+            {
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                ss.SaveAsFile($"D://NashTech//Rookies//NashTech_Homework//Automation_Test" +
+                    $"//SeleniumAdvantage//RookiesTest//" +
+                    $"bin//Screenshot//Firefox.png", ScreenshotImageFormat.Png);
+                TestContext.WriteLine("Take screenshot successfully");
+            }
+            catch (Exception excep)
+            {
+                TestContext.WriteLine("Take screenshot failed");
+                throw excep;
+            }
+
         }
         // action select option
         public void SelectOption(String locator, String key)
