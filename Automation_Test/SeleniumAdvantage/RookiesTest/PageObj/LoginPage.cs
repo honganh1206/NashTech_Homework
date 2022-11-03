@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using TestProject1.DriverCore;
+using CoreFramework.DriverCore;
 
 namespace RookiesTest.PageObj
 {
     public class LoginPage : WebDriverAction
     {
-        private readonly IWebDriver? _driver;
         public LoginPage(IWebDriver? driver) : base(driver)
         {
-            _driver = driver;
         }
 
         private readonly string userNameLocator = "//input[@name = 'uid']";

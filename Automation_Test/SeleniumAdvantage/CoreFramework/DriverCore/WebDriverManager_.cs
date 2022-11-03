@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace TestProject1.DriverCore
+namespace CoreFramework.DriverCore
 {
     // public means visible from anywhere
     public class WebDriverManager_
@@ -17,13 +17,10 @@ namespace TestProject1.DriverCore
         {
             //FrameworkConfiguration frameworkConfiguration = ConfigManager.
             //    GetConfig<FrameworkConfiguration>("Framework");
-            IWebDriver newDriver = null;
-            newDriver = WebDriverCreator.CreateLocalDriver(Browser, Height, Width);
+            IWebDriver newDriver = WebDriverCreator.CreateLocalDriver(Browser, Width, Height);
 
-            if (newDriver != null)
-            {
-                throw new Exception($"{Browser} br owser is not supported");
-            }
+            if (newDriver == null)
+                throw new Exception($"{Browser} browser is not supported");
             driver.Value = newDriver;
 
         }

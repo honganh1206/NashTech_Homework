@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using TestProject1.DriverCore;
+using CoreFramework.DriverCore;
 
 namespace CoreFramework.NUnitTestSetup
 {
@@ -14,12 +14,13 @@ namespace CoreFramework.NUnitTestSetup
     {
         // Check why [SetUp] uses InitDriver
         // Check Add Project Preference 
-        protected IWebDriver? _driver;
+        public IWebDriver? _driver;
+        public WebDriverAction? driverBaseAction;
 
         [SetUp]
         public void SetUp()
         {
-            WebDriverManager_.InitDriver("Chrome", 1920, 1080);
+            WebDriverManager_.InitDriver("chrome", 1920, 1080);
             _driver = WebDriverManager_.GetCurrentDriver();
         }
 
@@ -35,6 +36,7 @@ namespace CoreFramework.NUnitTestSetup
             else if (testStatus.Equals(TestStatus.Failed))
             {
                 TestContext.WriteLine("Failed");
+                driverBaseAction.ScreenShot();
             }
         }
     }

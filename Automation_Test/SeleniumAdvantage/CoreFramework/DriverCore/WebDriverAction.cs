@@ -10,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 
 
 // KEYWORD-DRIVEN
-namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
+namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
 {
     // similar to page obj
     // Click method uses try/catch
@@ -87,7 +87,20 @@ namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
-        public void SendKeys_(string locator, string key)
+        public void SendKeys_(IWebElement e, String key)
+        {
+            try
+            {
+                e.SendKeys(key);
+                TestContext.WriteLine("Sendkey into element " + e.ToString + " successfuly");
+            }
+            catch (Exception ex)
+            {
+                TestContext.WriteLine("Sendkey into element " + e.ToString + " failed");
+                throw ex;
+            }
+        }
+        public void SendKeys_(String locator, String key)
         {
             try
             {
@@ -102,6 +115,8 @@ namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
             }
         }
         // Add more actions
+
+        // TODO: Add SelectOption from a Toan's
         public IWebElement HighlightElem(IWebElement e)
         {
             try
@@ -130,8 +145,25 @@ namespace TestProject1.DriverCore // HomePage inherits WebDriverAction
         public void ScreenShot()
         {
             Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-            ss.SaveAsFile($"D://NashTech//Rookies//NashTech_Homework//Automation_Test//SeleniumAdvantage//RookiesTest//" +
+            ss.SaveAsFile($"D://NashTech//Rookies//NashTech_Homework//Automation_Test" +
+                $"//SeleniumAdvantage//RookiesTest//" +
                 $"bin//Screenshot//Firefox.png", ScreenshotImageFormat.Png);
+        }
+        // action select option
+        public void SelectOption(String locator, String key)
+        {
+            try
+            {
+                IWebElement mySelectOption = FindElementByXpath(locator);
+                SelectElement dropdown = new SelectElement(mySelectOption);
+                dropdown.SelectByText(key);
+                TestContext.WriteLine("Select element " + locator + " successfuly with " + key);
+            }
+            catch (Exception excep)
+            {
+                TestContext.WriteLine("Select element " + locator + " failed with " + key);
+                throw excep;
+            }
         }
     }
 }

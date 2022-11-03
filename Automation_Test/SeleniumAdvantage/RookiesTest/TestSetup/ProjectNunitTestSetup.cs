@@ -13,12 +13,11 @@ namespace RookiesTest.TestSetup
         [SetUp]
         public void SetUp()
         {
-            _driver.Url = "https://demo.guru99.com.v4/";
+            _driver.Url = "https://demo.guru99.com/v4/";
         }
         [TearDown]
         public void TearDown()
         {
-            _driver.Quit();
         }
     }
 }

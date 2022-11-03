@@ -1,14 +1,8 @@
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\CoverletSourceRootsMapping
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.csproj.AssemblyReference.cache
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.GeneratedMSBuildEditorConfig.editorconfig
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.AssemblyInfoInputs.cache
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.AssemblyInfo.cs
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.csproj.CoreCompileInputs.cache
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\testhost.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\CoreFramework.deps.json
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\CoreFramework.runtimeconfig.json
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\testhost.exe
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\NUnit3.TestAdapter.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\nunit.engine.dll
@@ -80,6 +74,7 @@ D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesT
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.TestPlatform.CommunicationUtilities.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
@@ -167,6 +162,11 @@ D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesT
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\CoreFramework.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\CoreFramework.pdb
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.csproj.AssemblyReference.cache
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.AssemblyInfoInputs.cache
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.AssemblyInfo.cs
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.csproj.CoreCompileInputs.cache
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.csproj.CopyComplete
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\RookiesTest.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\obj\Debug\net6.0\refint\RookiesTest.dll

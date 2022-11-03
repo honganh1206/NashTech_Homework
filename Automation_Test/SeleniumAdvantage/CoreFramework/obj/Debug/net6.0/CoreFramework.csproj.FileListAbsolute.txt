@@ -1,6 +1,5 @@
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\testhost.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\testhost.exe
-D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\NUnit3.TestAdapter.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\nunit.engine.dll
@@ -72,6 +71,7 @@ D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFram
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.TestPlatform.CommunicationUtilities.dll
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\CoreFramework\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll

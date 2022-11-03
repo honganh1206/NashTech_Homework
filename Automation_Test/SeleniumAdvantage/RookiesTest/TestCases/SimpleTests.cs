@@ -1,14 +1,15 @@
-﻿using CoreFramework.NUnitTestSetup;
-using NUnit.Framework;
+﻿using CoreFramework.DriverCore;
+using CoreFramework.NUnitTestSetup;
+using OpenQA.Selenium;
 using RookiesTest.PageObj;
-using TestProject1.DriverCore;
+using RookiesTest.TestSetup;
 
 namespace RookiesTest
 {
-    [TestFixture]
-    public class SimpleTests : NUnitTestSetup
+    public class SimpleTests : ProjectNunitTestSetup
     {
 
+        [Test]
         public void UserCanInputUserName()
         {
             LoginPage loginPage = new LoginPage(_driver);
@@ -16,10 +17,10 @@ namespace RookiesTest
             WebDriverAction ss = new WebDriverAction(_driver);
             ss.ScreenShot();
         }
-        [Test]
+        /*[Test]
         public void UserCanGetTextElement()
         {
 
-        }
+        }*/
     }
 }
