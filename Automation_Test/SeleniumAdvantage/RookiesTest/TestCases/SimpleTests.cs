@@ -15,7 +15,7 @@ namespace RookiesTest
             LoginPage loginPage = new LoginPage(_driver);
             loginPage.InputUserName("text");
             WebDriverAction ss = new WebDriverAction(_driver);
-            ss.ScreenShot();
+            ss.TakeMultipleScreenShots();
         }
         /*[Test]
         public void UserCanGetTextElement()

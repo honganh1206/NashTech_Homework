@@ -165,3 +165,6 @@ D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\SeleniumAdvantage_Day4\obj\Debug\net6.0\SeleniumAdvantage_Day4.pdb
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\SeleniumAdvantage_Day4\obj\Debug\net6.0\SeleniumAdvantage_Day4.genruntimeconfig.cache
 D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\SeleniumAdvantage_Day4\obj\Debug\net6.0\ref\SeleniumAdvantage_Day4.dll
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\SeleniumAdvantage_Day4\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\SeleniumAdvantage_Day4\bin\Debug\net6.0\WebDriver.Support.dll
+D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\SeleniumAdvantage_Day4\bin\Debug\net6.0\WebDriver.dll

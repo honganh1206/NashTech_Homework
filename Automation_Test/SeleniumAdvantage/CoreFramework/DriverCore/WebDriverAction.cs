@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -122,8 +123,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             try
             {
                 IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
-                string highlightJavascript = @"$(arguments[0]).css({ ""border-width"" : 
-                        ""2px"", ""border-style"" : ""solid"", ""border-color"" : ""red"" });";
+                string highlightJavascript = "arguments[0].style.border='2px solid red'";
                 jsDriver.ExecuteScript(highlightJavascript, new object[] { e });
                 TestContext.WriteLine("Highlight element [" + e.ToString() + "] passed");
                 return e;
@@ -141,16 +141,23 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
         {
             return driver.FindElement(By.XPath(locator)).Text;
         }
-
-        public void ScreenShot()
+        /* 
+         Take multiple screenshots
+         1. (Done - in WebDriverAction) Put your screenshot code into a function.
+         2. (Where?Add a date time stamp to your screenshot filename to give each file a unique name.
+         3. Add a short error string to the screenshot filename. 
+            That will enable you to quickly see how many of each error type are present. 
+        (Bonus) points for creating a folder for each error type 
+        and only placing screenshots of that particular error in that folder.
+         
+         */
+        public void TakeScreenShot(string filePath)
         {
             try
             {
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                ss.SaveAsFile($"D://NashTech//Rookies//NashTech_Homework//Automation_Test" +
-                    $"//SeleniumAdvantage//RookiesTest//" +
-                    $"bin//Screenshot//Firefox.png", ScreenshotImageFormat.Png);
-                TestContext.WriteLine("Take screenshot successfully");
+                ss.SaveAsFile(filePath + "//Chrome_" + GetDateTimeStamp() + ".png", ScreenshotImageFormat.Png);
+                //TestContext.WriteLine("Take screenshot successfully");
             }
             catch (Exception excep)
             {
@@ -159,6 +166,34 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             }
 
         }
+        public void TakeMultipleScreenShots()
+        {
+            string imageOutputPath = "D://NashTech//Rookies//" +
+                    $"NashTech_Homework//Automation_Test//SeleniumAdvantage//" +
+                    $"CoreFramework//Reporter//Screenshots//";
+            if (driver.Title.Contains("404"))
+            {
+                TakeScreenShot(imageOutputPath);
+                TestContext.WriteLine("Error 404 - Screenshot taken");
+            }
+            else
+            {
+                TakeScreenShot(imageOutputPath);
+                TestContext.WriteLine("Take screenshot successfully");
+            }
+        }
+        public string GetDateTimeStamp()
+        {
+            var VNCulture = new CultureInfo("vi-VN");
+            // get current UTC time
+            var utcDate = DateTime.UtcNow;
+            // Change time to match VN time
+            var VNDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(utcDate, "SE Asia Standard Time");
+            // output the GMT+7 time in Vietnam
+            string currentTimeVN = VNDate.ToString("yyyy_MM_dd_HH_mm_ss", VNCulture);
+            return currentTimeVN;
+        }
+
         // action select option
         public void SelectOption(String locator, String key)
         {

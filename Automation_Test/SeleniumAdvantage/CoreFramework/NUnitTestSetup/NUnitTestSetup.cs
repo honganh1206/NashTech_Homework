@@ -36,7 +36,7 @@ namespace CoreFramework.NUnitTestSetup
             else if (testStatus.Equals(TestStatus.Failed))
             {
                 TestContext.WriteLine("Failed");
-                driverBaseAction.ScreenShot();
+                driverBaseAction.TakeMultipleScreenShots();
             }
         }
     }
