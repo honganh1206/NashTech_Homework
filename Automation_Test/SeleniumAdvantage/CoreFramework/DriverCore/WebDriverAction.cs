@@ -4,10 +4,11 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports;
 
 
 // KEYWORD-DRIVEN
@@ -25,13 +26,14 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
     public class WebDriverAction
     {
         public IWebDriver driver;
-        private WebDriverWait explicitWait;
+        protected ExtentTest? _extentTestCase;
 
-        public WebDriverAction(IWebDriver driver)
+        public WebDriverAction(IWebDriver driver, ExtentTest _extentTestCase)
         {
 
             // check this. in c#
             this.driver = driver;
+            this._extentTestCase = _extentTestCase;
         }
 
         // return elems and elems' components
@@ -88,7 +90,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
-        public void SendKeys_(IWebElement e, String key)
+        public void SendKeys_(IWebElement e, string key)
         {
             try
             {
@@ -101,17 +103,17 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw ex;
             }
         }
-        public void SendKeys_(String locator, String key)
+        public void SendKeys_(string locator, string key)
         {
             try
             {
                 FindElementByXpath(locator).SendKeys(key);
-                TestContext.WriteLine("Sendkeys to element [" + locator + "] passed");
+                _extentTestCase.Pass("Sendkeys to element [" + locator + "] passed");
 
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Sendkeys to element [" + locator + "] failed");
+                _extentTestCase.Fail("Sendkeys to element [" + locator + "] failed");
                 throw excep;
             }
         }

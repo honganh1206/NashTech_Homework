@@ -1,0 +1,4 @@
+1. Build framework to support html report
+2. Study Markup in extent report
+3. Update old page object and script of previous section to use built framework
+4. Study about make a API request in C# (advantage)

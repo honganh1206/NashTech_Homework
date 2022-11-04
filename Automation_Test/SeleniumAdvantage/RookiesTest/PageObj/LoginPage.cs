@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using CoreFramework.DriverCore;
+using AventStack.ExtentReports;
 
 namespace RookiesTest.PageObj
 {
     public class LoginPage : WebDriverAction
     {
-        public LoginPage(IWebDriver? driver) : base(driver)
+        public LoginPage(IWebDriver? driver, ExtentTest _extentTestCase) : base(driver, _extentTestCase)
         {
         }
 
