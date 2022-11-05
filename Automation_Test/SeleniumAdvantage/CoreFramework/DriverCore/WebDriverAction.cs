@@ -82,11 +82,11 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             {
                 HighlightElem(e);
                 e.Click();
-                TestContext.WriteLine("Clicking on element [" + e.ToString() + "] passed");
+                TestContext.WriteLine("Clicking on element [ " + e.ToString() + " ] passed");
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Clicking on element [" + e.ToString() + "] failed");
+                TestContext.WriteLine("Clicking on element [ " + e.ToString() + " ] failed");
                 throw excep;
             }
         }
@@ -95,11 +95,11 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             try
             {
                 e.SendKeys(key);
-                TestContext.WriteLine("Sendkey into element " + e.ToString + " successfuly");
+                _extentTestCase.Pass("Sendkey into element " + e.ToString + " successfuly");
             }
             catch (Exception ex)
             {
-                TestContext.WriteLine("Sendkey into element " + e.ToString + " failed");
+                _extentTestCase.Fail("Sendkey into element " + e.ToString + " failed");
                 throw ex;
             }
         }
@@ -113,7 +113,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             }
             catch (Exception excep)
             {
-                _extentTestCase.Fail("Sendkeys to element [" + locator + "] failed");
+                _extentTestCase.Fail("Sendkeys to element [ " + locator + " ] failed");
                 throw excep;
             }
         }
@@ -184,6 +184,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 TestContext.WriteLine("Take screenshot successfully");
             }
         }
+        // Get creation time for photos in VN time zone
         public string GetDateTimeStamp()
         {
             var VNCulture = new CultureInfo("vi-VN");
@@ -198,7 +199,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
         }
 
         // action select option
-        public void SelectOption(String locator, String key)
+        public void SelectOption(string locator, string key)
         {
             try
             {

@@ -12,15 +12,23 @@ namespace RookiesTest
         [Test]
         public void UserCanInputUserName()
         {
-            LoginPage loginPage = new LoginPage(_driver);
+            LoginPage loginPage = new LoginPage(_driver, _extentTestCase);
             loginPage.InputUserName("text");
-            WebDriverAction ss = new WebDriverAction(_driver);
-            ss.TakeMultipleScreenShots();
+            //WebDriverAction ss = new WebDriverAction(_driver, _extentTestCase);
+            //ss.TakeMultipleScreenShots();
         }
         /*[Test]
         public void UserCanGetTextElement()
         {
 
         }*/
+        [Test]
+        public void UserCanInputUserName2()
+        {
+            LoginPage loginPage = new LoginPage(_driver, _extentTestCase);
+            loginPage.InputUserName("text");
+            //WebDriverAction ss = new WebDriverAction(_driver, _extentTestCase);
+            //ss.TakeMultipleScreenShots();
+        }
     }
 }

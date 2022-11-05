@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AventStack.ExtentReports;
 using CoreFramework.DriverCore;
 using OpenQA.Selenium;
 
@@ -10,7 +11,7 @@ namespace SeleniumAdvantage_Day2.PageObj
 {
     public class ResultPage : WebDriverAction
     {
-        public ResultPage(IWebDriver? driver): base(driver)
+        public ResultPage(IWebDriver? driver, ExtentTest _extentTestCase): base(driver, _extentTestCase)
         {
         }
         private string firstResult = "//*[contains(@h3,\"\") " +

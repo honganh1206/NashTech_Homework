@@ -116,7 +116,7 @@ UNION
 SELECT ('null'), department_id, department_name
 FROM departments
 
--- Practice 12 - Recheck needed
+-- Practice 12 - Recheck needed - Correct
 SELECT e.first_name, e.last_name, e.employee_id, e.job_id
 FROM employees e JOIN departments d ON e.department_id = d.department_id 
 JOIN locations l ON l.location_id = d.location_id

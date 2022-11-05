@@ -13,11 +13,12 @@ namespace CoreFramework.DriverCore
         // Noted Async in Obsi
         private static AsyncLocal<IWebDriver> driver = new AsyncLocal<IWebDriver>();
 
-        public static void InitDriver(String Browser, int Width, int Height)
+        public static void InitDriver(string Browser, int Width, int Height)
         {
             //FrameworkConfiguration frameworkConfiguration = ConfigManager.
             //    GetConfig<FrameworkConfiguration>("Framework");
-            IWebDriver newDriver = WebDriverCreator.CreateLocalDriver(Browser, Width, Height);
+            IWebDriver newDriver = WebDriverCreator.CreateLocalDriver
+                (Browser, Width, Height);
 
             if (newDriver == null)
                 throw new Exception($"{Browser} browser is not supported");

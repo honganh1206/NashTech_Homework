@@ -40,8 +40,9 @@ namespace CoreFramework.NUnitTestSetup
         {
             WebDriverManager_.InitDriver("chrome", 1920, 1080);
             _driver = WebDriverManager_.GetCurrentDriver();
+            _extentTestCase = _extentTestSuite.CreateNode
+                ($"{TestContext.CurrentContext.Test.Name}");
             driverBaseAction = new WebDriverAction(_driver, _extentTestCase);
-            _extentTestCase = _extentTestSuite.CreateNode($"{TestContext.CurrentContext.Test.Name}");
         }
 
         [TearDown]
