@@ -45,6 +45,7 @@ left join departments d on e.department_id = d.department_id
 SELECT employee_id FROM employees e
 JOIN departments d on e.department_id = d.department_id where department_name = 'Finance'
 UNION ALL 
+SELECT employee_id FROM employees e
 JOIN departments d on e.department_id = d.department_id where location_id = 1700
 
 -- Practice 5
@@ -69,14 +70,6 @@ WHERE department_id IN (SELECT department_id
 
 
 -- Practice 7
-
---- Join + Sub-query? =? Recheck needed
-SELECT e.employee_id, e.last_name, e.salary FROM employees e JOIN departments d
-ON e.department_id = d.department_id
-WHERE e.department_id IN (SELECT department_id
-			FROM employees 
-			WHERE last_name like '%u%')
-AND salary > (SELECT AVG(salary)FROM employees);
 
 --- Sub-query
 SELECT employee_id, last_name, salary
@@ -107,25 +100,21 @@ ORDER BY last_name ;
 SELECT employee_id, last_name, salary, salary + (salary*15/100) "New salary" 
 FROM employees;
 
--- Practice 11 - Recheck needed
-SELECT last_name, department_id, ('null')
+-- Practice 11
+SELECT last_name, department_id, CAST('null' AS varchar)
 FROM employees
-
 UNION
-
-SELECT ('null'), department_id, department_name
+SELECT CAST('null' AS varchar), department_id, department_name
 FROM departments
+ORDER BY 1;
 
--- Practice 12 - Recheck needed - Correct
-SELECT e.first_name, e.last_name, e.employee_id, e.job_id
-FROM employees e JOIN departments d ON e.department_id = d.department_id 
-JOIN locations l ON l.location_id = d.location_id
-WHERE hire_date IN
-(SELECT hire_date FROM employees WHERE e.hire_date = hire_date
-AND city = 'Toronto')
+-- Practice 12
+SELECT e.first_name, e.last_name, e.employee_id, e.job_id FROM employees e 
+JOIN employees m ON e.manager_id = m.employee_id
+WHERE e.hire_date > m.hire_date
+UNION
+SELECT e.first_name, e.last_name, e.employee_id, e.job_id FROM employees e 
+JOIN departments d on e.department_id = d.department_id
+JOIN locations l on d.location_id = l.location_id
+WHERE city = 'Toronto'
 
-
-SELECT e.last_name, e.department_id, e.job_id 
-FROM employees e JOIN departments d ON e.department_id = d.department_id
-JOIN locations l ON l.location_id = d.location_id
-WHERE city = 'Seattle'
