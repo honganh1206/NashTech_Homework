@@ -22,7 +22,9 @@ namespace CoreFramework.Reporter
         public static string DIFFERENCE_SCREENSHOT_PATH { get; set; }
         public static string BASELINE_SCREENSHOT_PATH { get; set; }
 
-        public static void InitDirection()
+
+        // Reports hiện ra trong bin thay vì folder con của proj??
+        public static void InitReportDirection()
         {
             string projectPath = FilePaths.GetCurrentDirectoryPath();
             REPORT_ROOT = projectPath + "\\Reports";
@@ -45,7 +47,7 @@ namespace CoreFramework.Reporter
 
 
         }
-
+        // Change name of last report folder and create latest report
         private static void checkExistReportAndRename(string reportFolder)
         {
             if (Directory.Exists(reportFolder))

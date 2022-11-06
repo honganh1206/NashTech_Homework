@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports;
+using CoreFramework.Reporter;
 
 
 // KEYWORD-DRIVEN
@@ -26,14 +27,12 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
     public class WebDriverAction
     {
         public IWebDriver driver;
-        protected ExtentTest? _extentTestCase;
 
-        public WebDriverAction(IWebDriver driver, ExtentTest _extentTestCase)
+        public WebDriverAction(IWebDriver driver)
         {
 
-            // check this. in c#
+            // this. means to the current instance of the class
             this.driver = driver;
-            this._extentTestCase = _extentTestCase;
         }
 
         // return elems and elems' components
@@ -95,11 +94,11 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             try
             {
                 e.SendKeys(key);
-                _extentTestCase.Pass("Sendkey into element " + e.ToString + " successfuly");
+                HtmlReport.Pass("Sendkey into element " + e.ToString + " successfuly");
             }
             catch (Exception ex)
             {
-                _extentTestCase.Fail("Sendkey into element " + e.ToString + " failed");
+                HtmlReport.Fail("Sendkey into element " + e.ToString + " failed");
                 throw ex;
             }
         }
@@ -108,12 +107,12 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             try
             {
                 FindElementByXpath(locator).SendKeys(key);
-                _extentTestCase.Pass("Sendkeys to element [" + locator + "] passed");
+                HtmlReport.Pass("Sendkeys to element [" + locator + "] passed");
 
             }
             catch (Exception excep)
             {
-                _extentTestCase.Fail("Sendkeys to element [ " + locator + " ] failed");
+                HtmlReport.Fail("Sendkeys to element [ " + locator + " ] failed");
                 throw excep;
             }
         }
@@ -178,11 +177,8 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 TakeScreenShot(imageOutputPath);
                 TestContext.WriteLine("Error 404 - Screenshot taken");
             }
-            else
-            {
-                TakeScreenShot(imageOutputPath);
-                TestContext.WriteLine("Take screenshot successfully");
-            }
+            TakeScreenShot(imageOutputPath);
+            TestContext.WriteLine("Take screenshot successfully");
         }
         // Get creation time for photos in VN time zone
         public string GetDateTimeStamp()

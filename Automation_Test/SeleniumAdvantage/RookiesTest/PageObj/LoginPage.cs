@@ -11,7 +11,7 @@ namespace RookiesTest.PageObj
 {
     public class LoginPage : WebDriverAction
     {
-        public LoginPage(IWebDriver? driver, ExtentTest _extentTestCase) : base(driver, _extentTestCase)
+        public LoginPage(IWebDriver? driver) : base(driver)
         {
         }
 

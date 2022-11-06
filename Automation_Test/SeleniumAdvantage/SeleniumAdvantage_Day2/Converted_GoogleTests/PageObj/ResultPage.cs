@@ -11,7 +11,7 @@ namespace SeleniumAdvantage_Day2.PageObj
 {
     public class ResultPage : WebDriverAction
     {
-        public ResultPage(IWebDriver? driver, ExtentTest _extentTestCase): base(driver, _extentTestCase)
+        public ResultPage(IWebDriver? driver): base(driver)
         {
         }
         private string firstResult = "//*[contains(@h3,\"\") " +
