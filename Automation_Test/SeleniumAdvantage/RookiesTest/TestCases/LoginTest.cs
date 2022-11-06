@@ -4,7 +4,7 @@ using RookiesTest.TestSetup;
 namespace RookiesTest
 {
     [TestFixture]
-    public class LoginTest : ProjectNunitTestSetup
+    public class LoginTest : RookieTest_ProjectNunitTestSetup
     {
 
         [Test]

@@ -68,6 +68,35 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
+
+        public void PressEnter(string locator)
+        {
+            try
+            {
+                FindElementByXpath(locator).SendKeys(Keys.Enter);
+                HtmlReport.Pass("Press enter on element [" + locator + "] passed");
+
+            }
+            catch (Exception excep)
+            {
+                HtmlReport.Fail("Press enter on element [" + locator + "] failed");
+                throw excep;
+            }
+        }
+        public void ClearSearchBox(string locator)
+        {
+            try
+            {
+                FindElementByXpath(locator).Clear();
+                HtmlReport.Pass("Clear previous input in element [" + locator + "] passed");
+
+            }
+            catch (Exception excep)
+            {
+                HtmlReport.Fail("Clear previous input in element [" + locator + "] failed");
+                throw excep;
+            }
+        }
         public void Click(IWebElement e)
         {
             try

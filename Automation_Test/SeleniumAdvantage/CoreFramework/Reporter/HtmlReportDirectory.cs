@@ -12,6 +12,7 @@ namespace CoreFramework.Reporter
         public static string SCREENSHOT_PATH { get; set; }
 
         // For future lessons
+        // Used for comparing between visual elements (Applitools?)
         public static string ACTUAL_SCREENSHOT_PATH { get; set; }
         public static string DIFFERENCE_SCREENSHOT_PATH { get; set; }
         public static string BASELINE_SCREENSHOT_PATH { get; set; }

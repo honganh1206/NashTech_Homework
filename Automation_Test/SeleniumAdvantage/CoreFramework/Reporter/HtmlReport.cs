@@ -1,4 +1,5 @@
 ﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.MarkupUtils;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 
@@ -162,26 +163,26 @@ namespace CoreFramework.Reporter
         //    var m = MarkupHelper.CreateLabel(htmlMarkUp, ExtentColor.Transparent);
         //    GetTest().Info(m);
         //}
-        //public static void MarkupPassJson()
-        //{
-        //    var json = "{'foo':'bar':'foos':['b','a','r'], " +
-        //        "'bar':{'foo':'bar', 'bar':false, 'foobar':1234}}";
-        //    GetTest().Info(MarkupHelper.CreateCodeBlock(json, CodeLanguage.Json));
-        //}
-        //public static void MarkupTable()
-        //{
-        //    string[][] someInts = new string[][] {
-        //        new string[] {
-        //            "<label> HAHAHA </label>"} 
-        //    };
-        //    var m = MarkupHelper.CreateTable(someInts);
-        //    GetTest().Info(m);
-        //}
-        //public static void MarkupLabel()
-        //{
-        //    var text = "extent";
-        //    var m = MarkupHelper.CreateLabel(text, ExtentColor.Blue);
-        //    GetTest().Pass(m);
-        //}
+        public static void MarkupPassJson()
+        {
+            var json = "{'foo':'bar':'foos':['b','a','r'], " +
+                "'bar':{'foo':'bar', 'bar':false, 'foobar':1234}}";
+            GetTest().Info(MarkupHelper.CreateCodeBlock(json, CodeLanguage.Json));
+        }
+        public static void MarkupTable()
+        {
+            string[][] someInts = new string[][] {
+                new string[] {
+                    "<label> HAHAHA </label>"}
+            };
+            var m = MarkupHelper.CreateTable(someInts);
+            GetTest().Info(m);
+        }
+        public static void MarkupLabel()
+        {
+            var text = "extent";
+            var m = MarkupHelper.CreateLabel(text, ExtentColor.Blue);
+            GetTest().Pass(m);
+        }
     }
 }

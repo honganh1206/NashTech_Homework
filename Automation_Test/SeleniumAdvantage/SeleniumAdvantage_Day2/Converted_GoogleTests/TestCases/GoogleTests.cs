@@ -6,7 +6,7 @@ using SeleniumAdvantage_Day2.TestSetup;
 
 namespace SeleniumAdvantage_Day2.Converted_GoogleTests.TestCases
 {
-    public class GoogleTests : ProjectNunitTestSetup
+    public class GoogleTests : GoogleTest_ProjectNunitTestSetup
     {
         [Test]
         public void UserCanInputSearch()
