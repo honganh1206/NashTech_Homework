@@ -1,7 +1,4 @@
-﻿using CoreFramework.DriverCore;
-using CoreFramework.NUnitTestSetup;
-using OpenQA.Selenium;
-using RookiesTest.PageObj;
+﻿using RookiesTest.PageObj;
 using RookiesTest.TestSetup;
 
 namespace RookiesTest

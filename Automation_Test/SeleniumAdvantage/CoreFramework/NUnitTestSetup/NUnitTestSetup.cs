@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using CoreFramework.DriverCore;
-using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using CoreFramework.Reporter;
 
 namespace CoreFramework.NUnitTestSetup

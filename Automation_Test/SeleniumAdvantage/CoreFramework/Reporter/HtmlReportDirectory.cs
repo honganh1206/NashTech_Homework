@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CoreFramework.Utilities;
-using NUnit.Framework;
+﻿using CoreFramework.Utilities;
 
 namespace CoreFramework.Reporter
 {
@@ -12,7 +6,7 @@ namespace CoreFramework.Reporter
     {
         // static vì khi chạy test nên có 1 report duy nhất 
         // Thay vì tạo nhiều folders với nhiều tên (Dynamic) thì chuyển thành 1 folder (static)
-        public static string REPORT_ROOT { get; set;  }
+        public static string REPORT_ROOT { get; set;}
         public static string REPORT_FOLDER_PATH { get; set; }
         public static string REPORT_FILE_PATH { get; set; }
         public static string SCREENSHOT_PATH { get; set; }

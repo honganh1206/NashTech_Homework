@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using AventStack.ExtentReports.Reporter;
-using AventStack.ExtentReports;
 using CoreFramework.Reporter;
 
 
@@ -66,12 +59,12 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             {
 
                 FindElementByXpath(locator).Click();
-                TestContext.WriteLine("Clicking on element [" + locator + "] passed");
+                HtmlReport.Pass("Clicking on element [" + locator + "] passed");
 
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Clicking on element [" + locator + "] failed");
+                HtmlReport.Fail("Clicking on element [" + locator + "] failed");
                 throw excep;
             }
         }
@@ -81,20 +74,21 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             {
                 HighlightElem(e);
                 e.Click();
-                TestContext.WriteLine("Clicking on element [ " + e.ToString() + " ] passed");
+                HtmlReport.Pass("Clicking on element [ " + e.ToString() + " ] passed");
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Clicking on element [ " + e.ToString() + " ] failed");
+                HtmlReport.Fail("Clicking on element [ " + e.ToString() + " ] failed");
                 throw excep;
             }
         }
+        // Param IWebElem
         public void SendKeys_(IWebElement e, string key)
         {
             try
             {
                 e.SendKeys(key);
-                HtmlReport.Pass("Sendkey into element " + e.ToString + " successfuly");
+                HtmlReport.Pass("Sendkey into element " + e.ToString + " successfuly", TakeScreenShot());
             }
             catch (Exception ex)
             {
@@ -102,17 +96,18 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw ex;
             }
         }
+        // Param string locator
         public void SendKeys_(string locator, string key)
         {
             try
             {
                 FindElementByXpath(locator).SendKeys(key);
-                HtmlReport.Pass("Sendkeys to element [" + locator + "] passed");
+                HtmlReport.Pass("Sendkeys to element [" + locator + "] passed", TakeScreenShot());
 
             }
             catch (Exception excep)
             {
-                HtmlReport.Fail("Sendkeys to element [ " + locator + " ] failed");
+                HtmlReport.Fail("Sendkeys to element [ " + locator + " ] failed", TakeScreenShot());
                 throw excep;
             }
         }
@@ -126,13 +121,13 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
                 string highlightJavascript = "arguments[0].style.border='2px solid red'";
                 jsDriver.ExecuteScript(highlightJavascript, new object[] { e });
-                TestContext.WriteLine("Highlight element [" + e.ToString() + "] passed");
+                HtmlReport.Pass("Highlight element [" + e.ToString() + "] passed");
                 return e;
 
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Highlight element [" + e.ToString() + "] failed");
+                HtmlReport.Fail("Highlight element [" + e.ToString() + "] failed");
                 throw excep;
 
             }
@@ -152,6 +147,8 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
         and only placing screenshots of that particular error in that folder.
          
          */
+
+        // Old version (No HtmlReporter + 1 function to get Time stamp)
         public void TakeScreenShot(string filePath)
         {
             try
@@ -159,6 +156,26 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
                 ss.SaveAsFile(filePath + "//Chrome_" + GetDateTimeStamp() + ".png", ScreenshotImageFormat.Png);
                 //TestContext.WriteLine("Take screenshot successfully");
+            }
+            catch (Exception excep)
+            {
+                TestContext.WriteLine("Take screenshot failed");
+                throw excep;
+            }
+
+        }
+        // new version (Yes HtmlReporter)
+        public string TakeScreenShot()
+        {
+            try
+            {
+     
+                string path = HtmlReportDirectory.SCREENSHOT_PATH + ("/screenshot_" + 
+                    DateTime.Now.ToString("yyyyMMddHHmmss")) + ".png"; // Dynamic name
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                ss.SaveAsFile(path, ScreenshotImageFormat.Png);
+                //TestContext.WriteLine("Take screenshot successfully");
+                return path;
             }
             catch (Exception excep)
             {

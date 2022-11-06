@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Reflection;
 using NUnit.Framework;
 
 namespace CoreFramework.Utilities
@@ -35,7 +29,7 @@ namespace CoreFramework.Utilities
         {
             // Back lại 3 folders, vào cùng folder vs project
             var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().
-                Location + "\\..\\..\\..");
+                Location) + "\\..\\..\\..";
             TestContext.Progress.WriteLine(path);
             return path;
         }

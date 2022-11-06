@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using AventStack.ExtentReports;
-using AventStack.ExtentReports.MarkupUtils;
+﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 
@@ -104,18 +97,34 @@ namespace CoreFramework.Reporter
         }
 
         // PASS OR FAIL
-        public static void Pass (string des)
+        // Pass with no screenshot
+        public static void Pass(string des)
         {
             GetTest().Pass(des);
             TestContext.WriteLine(des);
         }
+        // Pass with screenshot
+        public static void Pass (string des, string path)
+        {
+            GetTest().Pass(des).AddScreenCaptureFromPath(path);
+            TestContext.WriteLine(des);
+        }
+        // normal fail message
         public static void Fail(string des)
         {
-            // Add a screenshot to the report
 
             GetTest().Fail(des);
             TestContext.WriteLine(des);
         }
+
+        // add path to screenshot
+        public static void Fail(string des, string path)
+        {
+
+            GetTest().Fail(des).AddScreenCaptureFromPath(path);
+            TestContext.WriteLine(des);
+        }
+        // add failed example? and path to screenshot
         public static void Fail (string des, string ex, string path)
         {
 
