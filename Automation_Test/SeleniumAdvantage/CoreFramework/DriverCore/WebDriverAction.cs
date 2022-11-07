@@ -27,8 +27,20 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             // this. means to the current instance of the class
             this.driver = driver;
         }
+        // MOVEMENTS
+        public void MoveForward()
+        {
+                // Capture Screenshot fail?
+                driver.Navigate().Forward();
 
-        // return elems and elems' components
+        }
+        public void MoveBackward()
+        {
+                driver.Navigate().Back();
+
+        }
+
+        // INTERACTING WITH ELEMENTS
         public By GetXpath(string locator)
         {
             return By.XPath(locator);
@@ -111,9 +123,10 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
-        // Param IWebElem
+
         public void SendKeys_(IWebElement e, string key)
         {
+            // Param IWebElem
             try
             {
                 e.SendKeys(key);
@@ -125,9 +138,10 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw ex;
             }
         }
-        // Param string locator
+
         public void SendKeys_(string locator, string key)
         {
+            // Param string locator
             try
             {
                 FindElementByXpath(locator).SendKeys(key);
@@ -142,7 +156,6 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
         }
         // Add more actions
 
-        // TODO: Add SelectOption from a Toan's
         public IWebElement HighlightElem(IWebElement e)
         {
             try
@@ -166,20 +179,27 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
         {
             return driver.FindElement(By.XPath(locator)).Text;
         }
-        /* 
-         Take multiple screenshots
-         1. (Done - in WebDriverAction) Put your screenshot code into a function.
-         2. (Where?Add a date time stamp to your screenshot filename to give each file a unique name.
-         3. Add a short error string to the screenshot filename. 
-            That will enable you to quickly see how many of each error type are present. 
-        (Bonus) points for creating a folder for each error type 
-        and only placing screenshots of that particular error in that folder.
-         
-         */
+        public void SelectOption(string locator, string key)
+        {
+            try
+            {
+                IWebElement mySelectOption = FindElementByXpath(locator);
+                SelectElement dropdown = new SelectElement(mySelectOption);
+                dropdown.SelectByText(key);
+                TestContext.WriteLine("Select element " + locator + " successfuly with " + key);
+            }
+            catch (Exception excep)
+            {
+                TestContext.WriteLine("Select element " + locator + " failed with " + key);
+                throw excep;
+            }
+        }
 
-        // Old version (No HtmlReporter + 1 function to get Time stamp)
+        // CAPTURE SCREENSHOT
+
         public void TakeScreenShot(string filePath)
         {
+            // Old version (No HtmlReporter + 1 function to get Time stamp)
             try
             {
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
@@ -191,15 +211,15 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 TestContext.WriteLine("Take screenshot failed");
                 throw excep;
             }
-
         }
-        // new version (Yes HtmlReporter)
+
         public string TakeScreenShot()
         {
+            // new version (Yes HtmlReporter)
             try
             {
-     
-                string path = HtmlReportDirectory.SCREENSHOT_PATH + ("/screenshot_" + 
+
+                string path = HtmlReportDirectory.SCREENSHOT_PATH + ("/screenshot_" +
                     DateTime.Now.ToString("yyyyMMddHHmmss")) + ".png"; // Dynamic name
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
                 ss.SaveAsFile(path, ScreenshotImageFormat.Png);
@@ -240,21 +260,25 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             return currentTimeVN;
         }
 
-        // action select option
-        public void SelectOption(string locator, string key)
+
+        public void Assert_(string actual, string expected)
         {
+
             try
             {
-                IWebElement mySelectOption = FindElementByXpath(locator);
-                SelectElement dropdown = new SelectElement(mySelectOption);
-                dropdown.SelectByText(key);
-                TestContext.WriteLine("Select element " + locator + " successfuly with " + key);
+                Assert.That(actual, Is.EqualTo(expected));
+                HtmlReport.Pass("Actual result [" + actual + "] " +
+                    "is the same as [" + expected + "]");
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Select element " + locator + " failed with " + key);
+                HtmlReport.Pass("Actual result [" + actual + "] " +
+                    "is not the same as [" + expected + "]");
                 throw excep;
+
             }
+
+
         }
     }
 }

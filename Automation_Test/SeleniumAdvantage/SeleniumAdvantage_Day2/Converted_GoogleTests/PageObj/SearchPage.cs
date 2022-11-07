@@ -13,11 +13,12 @@ namespace SeleniumAdvantage_Day2.PageObj
         public SearchPage(IWebDriver? driver) : base(driver)
         {
         }
-        // chuy
+        //
         private readonly string searchBarLocator = "//*[contains(@title,'Tìm kiếm')]";
         public void InputSearch(string Search)
         {
             SendKeys_(searchBarLocator, Search);
+            PressEnter(searchBarLocator);
         }
     }
 

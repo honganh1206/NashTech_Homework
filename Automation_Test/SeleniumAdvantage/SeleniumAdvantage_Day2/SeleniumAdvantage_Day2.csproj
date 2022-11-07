@@ -31,10 +31,4 @@
     <ProjectReference Include="..\CoreFramework\CoreFramework.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Converted_Day2_Selenium_Practice2_Scenario1\TestSetup\" />
-    <Folder Include="Converted_Day2_Selenium_Practice2_Scenario1\TestCases\" />
-    <Folder Include="Converted_Day2_Selenium_Practice2_Scenario1\PageObj\" />
-  </ItemGroup>
-
 </Project>
