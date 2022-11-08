@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.MarkupUtils;
 using AventStack.ExtentReports.Reporter;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 
 
@@ -14,9 +15,10 @@ namespace CoreFramework.Reporter
         private static ExtentReports _report;
         private static ExtentTest extentTestSuite;
         private static ExtentTest extentTestCase;
+        
 
+        // ------------------------------- CREATE EXTENTREPORT  -------------------------------
 
-        // ACTIONS
         // Tránh tạo report trùng => Luôn có 1 obj duy nhất
         public static ExtentReports createReport()
         {
@@ -155,12 +157,15 @@ namespace CoreFramework.Reporter
             TestContext.WriteLine(des);
         }
 
+        // ------------------------------- MARKUP  -------------------------------
 
-        // MARKUP
         //public static void MarkUpHtml()
         //{
         //    var htmlMarkUp = HtmlInjector.CreateHtml();
         //    var m = MarkupHelper.CreateLabel(htmlMarkUp, ExtentColor.Transparent);
+        //    /* Similar syntax to Java
+        //     * return Log(Status.Info, m);
+        //     */
         //    GetTest().Info(m);
         //}
         public static void MarkupPassJson()
@@ -178,10 +183,48 @@ namespace CoreFramework.Reporter
             var m = MarkupHelper.CreateTable(someInts);
             GetTest().Info(m);
         }
-        public static void MarkupLabel()
+        // LABELS
+        public static void MarkupPassLabel()
         {
-            var text = "extent";
+            var text = "Passed";
+            var m = MarkupHelper.CreateLabel(text, ExtentColor.Green);
+            GetTest().Pass(m);
+        }
+        public static void MarkupFailLabel()
+        {
+            var text = "Failed";
+            var m = MarkupHelper.CreateLabel(text, ExtentColor.Red);
+            GetTest().Fail(m);
+        }
+        public static void MarkupWarningLabel()
+        {
+            var text = "Warning";
+            var m = MarkupHelper.CreateLabel(text, ExtentColor.Orange);
+            GetTest().Warning(m);
+        }
+        public static void MarkupSkipLabel()
+        {
+            var text = "Skipped";
             var m = MarkupHelper.CreateLabel(text, ExtentColor.Blue);
+            GetTest().Skip(m);
+        }
+        public static void MarkupXML()
+        {
+            string code = "<root>" +
+                    "\n    <Person>" +
+                    "\n        <Name>Joe Doe</Name>" +
+                    "\n        <StartDate>2007-01-01</StartDate>" +
+                    "\n        <EndDate>2009-01-01</EndDate>" +
+                    "\n        <Location>London</Location>" +
+                "\n    </Person>                    " +
+                "\n    <Person>" +
+                    "\n        <Name>John Smith</Name>" +
+                    "\n        <StartDate>2012-06-15</StartDate>" +
+                    "\n        <EndDate>2014-12-31</EndDate>" +
+                    "\n        <Location>Cardiff</Location>" +
+                "\n    </Person>" +
+            "\n</root>";
+            var m = MarkupHelper.CreateCodeBlock(code, CodeLanguage.Xml);
             GetTest().Pass(m);
         }
     }

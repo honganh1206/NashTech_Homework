@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">06/11/2022 10:41:41 CH</span>
+                    <span class="badge badge-primary">08/11/2022 12:16:16 CH</span>
                 </a>
             </li>
         </ul>
@@ -64,6 +64,14 @@
             <i class="fa fa-align-left"></i>
           </span>
           <span class="title">Tests</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('tag-view')">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
         </a>
       </li>
             <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -108,19 +116,43 @@
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
 				</li>
-								            </ul>
+                <li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-user"></i>
+					</a>
+					<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+							<a class="dropdown-item" href="#">HongAnhPham</a>
+					</ul>
+                </li>
+								<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-tag"></i>
+					</a>
+					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+							<a class="dropdown-item" href="#">SeleniumTest</a>
+					</ul>
+                </li>
+								<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-tablet"></i>
+					</a>
+					<ul id="device-toggle" class="dropdown-menu dropdown-md p-v-0">
+							<a class="dropdown-item" href="#">PC</a>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <div class="test-list-wrapper scrollable">
             <ul class="test-list-item">
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+					<li class="test-item" status="pass" author="HongAnhPham" device="PC" tag="SeleniumTest" test-id="1"> 
 						<div class="status-avatar pass-bg">
 							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">RookiesTest.LoginTest</p> 
-								<p class="duration text-sm">0h:0m:13s+229ms</p> 
-								<span class="datetime">22:41:41 CH</span>
+								<p class="duration text-sm">0h:0m:5s+130ms</p> 
+								<span class="datetime">12:16:16 CH</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -128,51 +160,23 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">RookiesTest.LoginTest</h5>
-										<span class='badge badge-success'>06/11/2022 10:41:41 CH</span>
-										<span class='badge badge-danger'>06/11/2022 10:41:54 CH</span>
-										<span class='badge badge-default'>0h:0m:13s+229ms</span>
+										<span class='badge badge-success'>08/11/2022 12:16:16 CH</span>
+										<span class='badge badge-danger'>08/11/2022 12:16:22 CH</span>
+										<span class='badge badge-default'>0h:0m:5s+130ms</span>
+									</div>
+									<div class="m-t-15">
+		                                	<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> HongAnhPham</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> SeleniumTest</span> 	
+						<span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> PC</span> 
+	</div>
+
 									</div>
 																	</div>
 							</div>
 <div class="mt-4">
 	
 	<div class="accordion">
-			<div class="card">
-				<div class="card-header" role="tab">
-					<h5 class="card-title">
-						<div class="node">UserCanInputUserName</div>
-						<div class="status-avatar float-right pass-bg">
-							<i class="fa fa-check text-white"></i>
-                        </div>
-					</h5>
-				</div>
-				<div class="collapse">
-					<div class="card-body">
-						
-<table class="table table-sm">
-	<thead><tr>
-		<th class="status-col">Status</th>
-		<th class="timestamp-col">Timestamp</th>
-		<th class="details-col">Details</th>
-	</tr></thead>
-	<tbody>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>22:41:45</td>
-				<td>
-Highlight element [Element (id = 5d86ea7c-f9f2-4d11-8a5b-724074df86b0)] passed									</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>22:41:46</td>
-				<td>
-Sendkeys to element [//input[@name = 'uid']] passed									</td>
-			</tr>
-	</tbody>
-</table>
-						<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221106224146.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221106224146.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221106224146.png'>					</div>
-				</div>
-			</div>
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
@@ -194,19 +198,31 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>22:41:54</td>
+				<td>12:16:21</td>
 				<td>
-Highlight element [Element (id = 62cc4849-473e-4cbd-b5e0-94b443e18f2f)] passed									</td>
+Highlight element [Element (id = d58a053e-51a0-43cb-9baa-33a6c5946695)] passed									</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>22:41:54</td>
+				<td>12:16:22</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>12:16:22</td>
 				<td>
 Sendkeys to element [//input[@name = 'uid']] passed									</td>
 			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>12:16:22</td>
+				<td>
+<div class='json-tree' id='code-block-json-1'></div><script>function jsonTreeCreate1() { document.getElementById('code-block-json-1').innerHTML = JSONTree.create({'foo':'bar':'foos':['b','a','r'], 'bar':{'foo':'bar', 'bar':false, 'foobar':1234}}); }jsonTreeCreate1();</script>									</td>
+			</tr>
 	</tbody>
 </table>
-						<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221106224154.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221106224154.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221106224154.png'>					</div>
+						<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221108121621.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221108121621.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\RookiesTest\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221108121621.png'>					</div>
 				</div>
 			</div>
 	</div>
@@ -232,7 +248,81 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
         </div>
     </div>
 </div>
-										<div class="container-fluid p-4 dashboard-view">
+<div class="test-wrapper row tag-view attributes-view">
+    <div class="test-list">
+        <div class="test-list-tools">
+            <ul class="tools pull-left">
+                <li>
+                    <a href="">
+                        <span class="font-size-14">Tags</span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="tools text-right">
+                <li>
+                    <a href="#">
+                        <span class="badge badge-primary">1</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-list-wrapper scrollable">
+            <ul class="test-list-item">
+
+<li class="test-item">
+  <div class="open-test">
+    <div class="test-detail">
+      <p class="name">SeleniumTest</p>
+      <p class="duration text-sm">1 tests</p>
+      <span class="datetime">
+ <span class='badge badge-success'>1</span>                               </span>
+    </div>
+  </div>
+  <div class="test-contents d-none">
+    <div class="info">
+      <h4>SeleniumTest</h4>
+ <span class='badge badge-success'>1 passed</span>                       </div>
+    <table class='table table-sm mt-4'>
+      <thead>
+        <tr>
+          <th class="status-col">Status</th>
+          <th class="timestamp-col">Timestamp</th>
+          <th>TestName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>12:16:16</td>
+          <td class='linked' test-id='1' root-id="1">
+            <a href="#">RookiesTest.LoginTest</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>            </ul>    
+        </div>
+    </div>
+    <div class="test-content scrollable">
+        <div class="test-content-tools">
+            <ul>
+                <li>
+                    <a class="back-to-test" href="javascript:void(0)">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-content-detail">
+            <div class="detail-body"></div>
+        </div>
+    </div>
+</div>										<div class="container-fluid p-4 dashboard-view">
 	<div class="row">
 		<div class="col-sm-12 col-md-6">
 			<div class="card">
@@ -267,7 +357,7 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='100%'><b>2</b> steps passed</small></div>
+	                <div><small data-tooltip='100%'><b>1</b> steps passed</small></div>
 	                <div>
 	                    <small data-tooltip='0%'><b>0</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
@@ -303,7 +393,7 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Steps</h6>
-							<h2 class="font-size-28 font-weight-light">2</h2>
+							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
 								<span>100%</span>
@@ -322,7 +412,7 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">06/11/2022 10:41:41 CH</h6>
+							<h6 class="font-weight-light">08/11/2022 12:16:16 CH</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -338,7 +428,7 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:13.3410140</h6>
+							<h6 class="font-weight-light">00:00:05.3033742</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -350,7 +440,94 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 		</div>
 	</div>
 	<div class="row">
-							</div>
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Author</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>HongAnhPham</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+				<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tags</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>SeleniumTest</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+				<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Device</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>PC</td>
+								<td>1</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+			</div>
 </div>
 <script>
 	var statusGroup = {
@@ -362,8 +539,8 @@ Sendkeys to element [//input[@name = 'uid']] passed									</td>
 		warningParent: 0,
 		skipParent: 0,
 		exceptionsParent: 0,
-		childCount: 2,
-		passChild: 2,
+		childCount: 1,
+		passChild: 1,
 		failChild: 0,
 		fatalChild: 0,
 		errorChild: 0,

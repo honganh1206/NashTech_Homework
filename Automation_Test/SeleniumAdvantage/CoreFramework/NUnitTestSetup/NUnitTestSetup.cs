@@ -22,7 +22,9 @@ namespace CoreFramework.NUnitTestSetup
             HtmlReport.createReport();
 
             // Without this, a suite will not be created
-            HtmlReport.createTest(TestContext.CurrentContext.Test.ClassName);
+            // Assign metadata here
+            HtmlReport.createTest(TestContext.CurrentContext.Test.ClassName).
+                AssignAuthor("Hong Anh Pham").AssignDevice("PC").AssignCategory("SeleniumTest");
         }
 
         [SetUp]

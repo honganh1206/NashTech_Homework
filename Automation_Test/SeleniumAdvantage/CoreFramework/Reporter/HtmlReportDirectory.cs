@@ -48,7 +48,6 @@ namespace CoreFramework.Reporter
             if (Directory.Exists(reportFolder))
             {
                 DirectoryInfo dirInfo = new DirectoryInfo(reportFolder);
-                // Note: Add this to DateTimeStamp?
                 var newPath = REPORT_ROOT + "\\Report_" + dirInfo.CreationTime.
                     ToString().Replace(":", ".").Replace("/", "-");
                 Directory.Move(reportFolder, newPath);

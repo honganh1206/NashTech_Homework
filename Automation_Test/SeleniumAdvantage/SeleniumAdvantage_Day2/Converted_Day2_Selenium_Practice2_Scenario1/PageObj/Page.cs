@@ -8,8 +8,8 @@ namespace SeleniumAdvantage_Day2.Converted_Day2_Selenium_Practice2_Scenario1.Pag
         public Page(IWebDriver? driver) : base(driver)
         {
         }
-        private string contactUsBtnLocator = "//*[text()='Contact us']";
-        private string csTitleLocator = "//*[contains(@class, 'page-heading')]";
+        private readonly string contactUsBtnLocator = "//*[text()='Contact us']";
+        private readonly string csTitleLocator = "//*[contains(@class, 'page-heading')]";
         public void VerifyText(string expectedText)
         {
             Assert_(GetTextFromElem(csTitleLocator), expectedText);

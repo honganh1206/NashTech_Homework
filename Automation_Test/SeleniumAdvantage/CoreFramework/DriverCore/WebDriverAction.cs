@@ -6,17 +6,8 @@ using CoreFramework.Reporter;
 
 
 // KEYWORD-DRIVEN
-namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
+namespace CoreFramework.DriverCore
 {
-    // similar to page obj
-    // Click method uses try/catch
-    // Ctrl A and Command A in Mac
-    // TestContext.Write() to notify try/catch
-
-    // Highlight an elem = Add Style in CSS in FindElem method
-    // Recheck AsyncLocal (for SimpleTest)
-
-
     public class WebDriverAction
     {
         public IWebDriver driver;
@@ -27,7 +18,8 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             // this. means to the current instance of the class
             this.driver = driver;
         }
-        // MOVEMENTS
+        // ------------------------------- MOVEMENTS -------------------------------
+
         public void MoveForward()
         {
                 // Capture Screenshot fail?
@@ -39,8 +31,8 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 driver.Navigate().Back();
 
         }
+        // ------------------------------- INTERACTING WITH ELEMENTS  -------------------------------
 
-        // INTERACTING WITH ELEMENTS
         public By GetXpath(string locator)
         {
             return By.XPath(locator);
@@ -69,7 +61,6 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             //var current = 1;
             try
             {
-
                 FindElementByXpath(locator).Click();
                 HtmlReport.Pass("Clicking on element [" + locator + "] passed");
 
@@ -131,6 +122,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             {
                 e.SendKeys(key);
                 HtmlReport.Pass("Sendkey into element " + e.ToString + " successfuly", TakeScreenShot());
+
             }
             catch (Exception ex)
             {
@@ -146,7 +138,6 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             {
                 FindElementByXpath(locator).SendKeys(key);
                 HtmlReport.Pass("Sendkeys to element [" + locator + "] passed", TakeScreenShot());
-
             }
             catch (Exception excep)
             {
@@ -154,7 +145,6 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
-        // Add more actions
 
         public IWebElement HighlightElem(IWebElement e)
         {
@@ -194,8 +184,26 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                 throw excep;
             }
         }
+        public void Assert_(string actual, string expected)
+        {
 
-        // CAPTURE SCREENSHOT
+            try
+            {
+                Assert.That(actual, Is.EqualTo(expected));
+                HtmlReport.Pass("Actual result [" + actual + "] " +
+                    "is the same as [" + expected + "]");
+            }
+            catch (Exception excep)
+            {
+                HtmlReport.Fail("Actual result [" + actual + "] " +
+                    "is not the same as [" + expected + "]");
+                throw excep;
+
+            }
+
+        }
+
+        // ------------------------------- CAPTURE SCREENSHOT  -------------------------------
 
         public void TakeScreenShot(string filePath)
         {
@@ -204,7 +212,7 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
             {
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
                 ss.SaveAsFile(filePath + "//Chrome_" + GetDateTimeStamp() + ".png", ScreenshotImageFormat.Png);
-                //TestContext.WriteLine("Take screenshot successfully");
+                TestContext.WriteLine("Take screenshot successfully");
             }
             catch (Exception excep)
             {
@@ -223,32 +231,29 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
                     DateTime.Now.ToString("yyyyMMddHHmmss")) + ".png"; // Dynamic name
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
                 ss.SaveAsFile(path, ScreenshotImageFormat.Png);
-                //TestContext.WriteLine("Take screenshot successfully");
+                HtmlReport.Pass("Take screenshot successfully");
                 return path;
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Take screenshot failed");
+                HtmlReport.Fail("Take screenshot failed");
                 throw excep;
             }
 
         }
-        public void TakeMultipleScreenShots()
+        public void TakeScreenshotIf404()
         {
-            string imageOutputPath = "D://NashTech//Rookies//" +
-                    $"NashTech_Homework//Automation_Test//SeleniumAdvantage//" +
-                    $"CoreFramework//Reporter//Screenshots//";
             if (driver.Title.Contains("404"))
             {
-                TakeScreenShot(imageOutputPath);
-                TestContext.WriteLine("Error 404 - Screenshot taken");
+                TakeScreenShot();
+                HtmlReport.Warning("Error 404 - Screenshot taken");
             }
-            TakeScreenShot(imageOutputPath);
-            TestContext.WriteLine("Take screenshot successfully");
+            TakeScreenShot();
         }
-        // Get creation time for photos in VN time zone
+        // ------------------------------- NAMING  -------------------------------
         public string GetDateTimeStamp()
         {
+            // Get creation time for photos in VN time zone
             var VNCulture = new CultureInfo("vi-VN");
             // get current UTC time
             var utcDate = DateTime.UtcNow;
@@ -261,24 +266,6 @@ namespace CoreFramework.DriverCore // HomePage inherits WebDriverAction
         }
 
 
-        public void Assert_(string actual, string expected)
-        {
 
-            try
-            {
-                Assert.That(actual, Is.EqualTo(expected));
-                HtmlReport.Pass("Actual result [" + actual + "] " +
-                    "is the same as [" + expected + "]");
-            }
-            catch (Exception excep)
-            {
-                HtmlReport.Pass("Actual result [" + actual + "] " +
-                    "is not the same as [" + expected + "]");
-                throw excep;
-
-            }
-
-
-        }
     }
 }

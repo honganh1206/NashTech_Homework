@@ -8,7 +8,7 @@ namespace SeleniumAdvantage_Day2.Converted_Day2_Selenium_Practice2_Scenario1.Pag
         public ResultPage(IWebDriver? driver) : base(driver)
         {
         }
-        private string firstResultLocator = "//*[contains(@h3,\"\") " +
+        private readonly string firstResultLocator = "//*[contains(@h3,\"\") " +
             "and text()= 'Reddit - Dive into anything']";
 
         public void GetFirstResult()
@@ -21,7 +21,7 @@ namespace SeleniumAdvantage_Day2.Converted_Day2_Selenium_Practice2_Scenario1.Pag
                 Substring(0, GetTitle().IndexOf("-")).Trim();
             Assert_(stringBeforeDash, searchInput);
         }
-        private string signUpBtnLocator = "//*[contains(@href," +
+        private readonly  string signUpBtnLocator = "//*[contains(@href," +
     "'https://www.reddit.com/register/?dest=https%3A%2F%2Fwww.reddit.com%2F')]";
         public void CompareText(string expectedTextFromElem)
         {
