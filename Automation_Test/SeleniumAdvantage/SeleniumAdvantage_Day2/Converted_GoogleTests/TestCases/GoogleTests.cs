@@ -4,10 +4,11 @@ using Assert = NUnit.Framework.Assert;
 using SeleniumAdvantage_Day2.PageObj;
 using SeleniumAdvantage_Day2.TestSetup;
 using SeleniumAdvantage_Day2.Converted_Day2_Selenium_Practice2_Scenario1.PageObj;
+using NUnit.Framework;
 
 namespace SeleniumAdvantage_Day2.Converted_GoogleTests.TestCases
 {
-    public class GoogleTests : Scenario1_Test_ProjectNunitTestSetup
+    public class GoogleTests : GoogleTest_ProjectNunitTestSetup
     {
 
         [Test]

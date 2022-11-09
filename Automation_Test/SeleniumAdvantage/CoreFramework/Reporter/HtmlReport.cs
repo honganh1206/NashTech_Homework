@@ -105,6 +105,7 @@ namespace CoreFramework.Reporter
         {
             GetTest().Pass(des);
             TestContext.WriteLine(des);
+            //HtmlReport.MarkupPassLabel(des);
         }
         // Pass with screenshot
         public static void Pass (string des, string path)
@@ -159,15 +160,15 @@ namespace CoreFramework.Reporter
 
         // ------------------------------- MARKUP  -------------------------------
 
-        //public static void MarkUpHtml()
-        //{
-        //    var htmlMarkUp = HtmlInjector.CreateHtml();
-        //    var m = MarkupHelper.CreateLabel(htmlMarkUp, ExtentColor.Transparent);
-        //    /* Similar syntax to Java
-        //     * return Log(Status.Info, m);
-        //     */
-        //    GetTest().Info(m);
-        //}
+        public static void MarkUpHtml()
+        {
+            var htmlMarkUp = HtmlInjector.CreateHtml();
+            var m = MarkupHelper.CreateLabel(htmlMarkUp, ExtentColor.Transparent);
+            /* Similar syntax to Java
+             * return Log(Status.Info, m);
+             */
+            GetTest().Info(m);
+        }
         public static void MarkupPassJson()
         {
             var json = "{'foo':'bar':'foos':['b','a','r'], " +

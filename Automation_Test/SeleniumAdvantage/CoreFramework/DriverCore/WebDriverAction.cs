@@ -3,6 +3,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using CoreFramework.Reporter;
+using SeleniumExtras.WaitHelpers;
 
 
 // KEYWORD-DRIVEN
@@ -11,7 +12,7 @@ namespace CoreFramework.DriverCore
     public class WebDriverAction
     {
         public IWebDriver driver;
-
+        public IJavaScriptExecutor Javascript { get; set; }
         public WebDriverAction(IWebDriver driver)
         {
 
@@ -31,6 +32,18 @@ namespace CoreFramework.DriverCore
                 driver.Navigate().Back();
 
         }
+        public void ScrollToBottomOfPage()
+        {
+            //This will scroll to the bottom of the page and wait for 1 second for the action to finish
+            Javascript.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+            Thread.Sleep(1000);
+        }
+        public void ScrollToTopOfPage()
+        {
+            //This will scroll to the top of the page and wait one second
+            Javascript.ExecuteScript("window.scrollTo(0, -document.body.scrollHeight)");
+            Thread.Sleep(1000);
+        }
         // ------------------------------- INTERACTING WITH ELEMENTS  -------------------------------
 
         public By GetXpath(string locator)
@@ -49,6 +62,7 @@ namespace CoreFramework.DriverCore
             HighlightElem(e);
             return e;
         }
+
         public IList<IWebElement> FindElementsByXpath(string locator)
         {
             return driver.FindElements(GetXpath(locator));
@@ -115,6 +129,21 @@ namespace CoreFramework.DriverCore
             }
         }
 
+        public void DoubleClick(IWebElement e)
+        {
+            try
+            {
+                WebDriverAction action = new WebDriverAction(driver);
+                HighlightElem(e);
+                action.DoubleClick(e);
+                HtmlReport.Pass("Double click on element " + e.ToString() + " successfuly");
+            }
+            catch (Exception ex)
+            {
+                HtmlReport.Fail("Double click on element " + e.ToString() + " failed with");
+                throw ex;
+            }
+        }
         public void SendKeys_(IWebElement e, string key)
         {
             // Param IWebElem
@@ -150,9 +179,9 @@ namespace CoreFramework.DriverCore
         {
             try
             {
-                IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
+                //IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
                 string highlightJavascript = "arguments[0].style.border='2px solid red'";
-                jsDriver.ExecuteScript(highlightJavascript, new object[] { e });
+                Javascript.ExecuteScript(highlightJavascript, new object[] { e });
                 HtmlReport.Pass("Highlight element [" + e.ToString() + "] passed");
                 return e;
 
@@ -176,11 +205,11 @@ namespace CoreFramework.DriverCore
                 IWebElement mySelectOption = FindElementByXpath(locator);
                 SelectElement dropdown = new SelectElement(mySelectOption);
                 dropdown.SelectByText(key);
-                TestContext.WriteLine("Select element " + locator + " successfuly with " + key);
+                HtmlReport.Pass("Select element " + locator + " successfuly with " + key);
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Select element " + locator + " failed with " + key);
+                HtmlReport.Fail("Select element " + locator + " failed with " + key);
                 throw excep;
             }
         }
@@ -189,6 +218,7 @@ namespace CoreFramework.DriverCore
 
             try
             {
+                HighlightElem(FindElementByXpath(actual));
                 Assert.That(actual, Is.EqualTo(expected));
                 HtmlReport.Pass("Actual result [" + actual + "] " +
                     "is the same as [" + expected + "]");
@@ -202,24 +232,26 @@ namespace CoreFramework.DriverCore
             }
 
         }
-
-        // ------------------------------- CAPTURE SCREENSHOT  -------------------------------
-
-        public void TakeScreenShot(string filePath)
+        public void ClosePopUp(string locator)
         {
-            // Old version (No HtmlReporter + 1 function to get Time stamp)
             try
             {
-                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                ss.SaveAsFile(filePath + "//Chrome_" + GetDateTimeStamp() + ".png", ScreenshotImageFormat.Png);
-                TestContext.WriteLine("Take screenshot successfully");
+                //try to see if the pop up is open and visible for 15 seconds. If it is, click the Close button
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+                var popUpCloseButton = wait.Until(
+                    ExpectedConditions.ElementIsVisible(GetXpath(locator)));
+                popUpCloseButton.Click();
+                HtmlReport.Pass("Close Pop up successfully");
             }
             catch (Exception excep)
             {
-                TestContext.WriteLine("Take screenshot failed");
+                HtmlReport.Fail("Close Pop up fail");
                 throw excep;
+
             }
         }
+
+        // ------------------------------- CAPTURE SCREENSHOT  -------------------------------
 
         public string TakeScreenShot()
         {
@@ -239,7 +271,6 @@ namespace CoreFramework.DriverCore
                 HtmlReport.Fail("Take screenshot failed");
                 throw excep;
             }
-
         }
         public void TakeScreenshotIf404()
         {
