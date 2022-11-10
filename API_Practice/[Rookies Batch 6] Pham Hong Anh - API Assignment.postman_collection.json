@@ -13,7 +13,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 404\", function () {\r",
+							"pm.test(\"04_Issue a GET request on the `/todo` end point should 404 because nouns should be plural\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
 							"});"
 						],
@@ -43,7 +43,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Body matches string\", function () {\r",
+							"pm.test(\"05_Issue a GET request on the `/todos/{id}` end point to return a specific todo\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Could not find an instance with todos\");\r",
 							"});"
 						],
@@ -74,10 +74,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 404\", function () {\r",
+							"pm.test(\"06_Status code is 404\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
 							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
+							"pm.test(\"06_Issue a GET request on the `/todos/{id}` end point for a todo that does not exist\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Could not find an instance with todos\");\r",
 							"});"
 						],
@@ -108,7 +108,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Content-Type is present\", function () {\r",
+							"pm.test(\"07_Issue a HEAD request on the `/todos` end point\", function () {\r",
 							"    pm.response.to.have.header(\"Content-Type\");\r",
 							"});"
 						],
@@ -138,10 +138,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 201\", function () {\r",
+							"pm.test(\"08_Status code is 201\", function () {\r",
 							"    pm.response.to.have.status(201);\r",
 							"});\r",
-							"pm.test(\"Successful POST request\", function () {\r",
+							"pm.test(\"08_Issue a POST request to successfully create a todo\", function () {\r",
 							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
 							"});"
 						],
@@ -154,7 +154,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"create todo process payroll\",\r\n    \"doneStatus\": false,\r\n    \"description\": \"\"\r\n\r\n}",
+					"raw": "{\r\n    \"title\": \"create todo process payroll\",\r\n    \"doneStatus\": true,\r\n    \"description\": \"\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -180,8 +180,12 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"09_Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"09_Issue a GET request on the `/todos` end point with a query filter to get only todos which are 'done'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -192,7 +196,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/todos?doneStatus=true",
+					"raw": "{{url}}/todos",
 					"host": [
 						"{{url}}"
 					],
@@ -202,7 +206,8 @@
 					"query": [
 						{
 							"key": "doneStatus",
-							"value": "true"
+							"value": "false",
+							"disabled": true
 						}
 					]
 				}
@@ -216,10 +221,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 400\", function () {\r",
+							"pm.test(\"10_Status code is 400\", function () {\r",
 							"    pm.response.to.have.status(400);\r",
 							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
+							"pm.test(\"10_Issue a POST request to create a todo but fail validation on the `doneStatus` field\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Failed Validation: doneStatus should be BOOLEAN\");\r",
 							"});"
 						],
@@ -258,10 +263,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 201\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
+							"pm.test(\"11_Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
 							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
+							"pm.test(\"11_Issue a POST request to successfully update a todo\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"update todo\");\r",
 							"});\r",
 							""
@@ -283,12 +288,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/todos",
+					"raw": "{{url}}/todos/1767",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"todos"
+						"todos",
+						"1767"
 					]
 				}
 			},
@@ -301,12 +307,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 404\", function () {\r",
-							"    pm.response.to.have.status(404);\r",
+							"pm.test(\"12_Status code is 200 when deleting id 1763 \", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Could not find any instances with todos/\");\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -325,13 +329,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/todos/1446",
+					"raw": "{{url}}/todos/1763",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"todos",
-						"1446"
+						"1763"
 					]
 				}
 			},
@@ -344,12 +348,14 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"13_Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Content-Type is present\", function () {\r",
-							"    pm.response.to.have.header(\"Allow\");\r",
+							"pm.test(\"13_Issue an OPTIONS request on the `/todos` end point. You might want to manually check the 'Allow' header in the response is as expected.\", function () {\r",
+							"   var responseHeaders = pm.response.headers.all();\r",
+							"   var allowMethod = Object.values(responseHeaders[2]);\r",
+							"   pm.expect(allowMethod[1]).to.include(\"OPTIONS, GET, HEAD, POST\")\r",
 							"});"
 						],
 						"type": "text/javascript"
