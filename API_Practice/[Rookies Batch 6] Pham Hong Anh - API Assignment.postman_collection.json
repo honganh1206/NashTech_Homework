@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "0522b1d1-6006-49f0-82c8-2335f722fe64",
+		"name": "[Rookies Batch 6] Pham Hong Anh - API Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24323766"
+	},
+	"item": [
+		{
+			"name": "Request 04",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 05",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos/1215",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"1215"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 06",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 07",
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 08",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"create todo process payroll\",\r\n    \"doneStatus\": false,\r\n    \"description\": \"\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 09",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos?doneStatus=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "doneStatus",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 10",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"title\": \"create new todo\",\r\n        \"doneStatus\": \"Hong Anh\",\r\n        \"description\": \"created via postman\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 11",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"title\": \"update todo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/todos/976",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"976"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 12",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/todos/957",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"957"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 13",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
