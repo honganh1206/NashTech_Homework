@@ -18,7 +18,7 @@ namespace SeleniumAdvantage_Day2.Converted_Day2_Selenium_Practice2_Scenario1.Pag
         public void CompareTitle(string searchInput)
         {
             string stringBeforeDash = GetTitle().
-                Substring(0, GetTitle().IndexOf("-")).Trim();
+                Substring(0,GetTitle().IndexOf("-")).Trim();
             Assert_(stringBeforeDash, searchInput);
         }
         private readonly  string signUpBtnLocator = "//*[contains(@href," +

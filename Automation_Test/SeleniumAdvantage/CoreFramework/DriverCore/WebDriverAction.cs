@@ -55,6 +55,10 @@ namespace CoreFramework.DriverCore
         {
             return driver.Title;
         }
+        public string GetTextFromElem(string locator)
+        {
+            return driver.FindElement(By.XPath(locator)).Text;
+        }
 
         public IWebElement FindElementByXpath(string locator)
         {
@@ -179,9 +183,9 @@ namespace CoreFramework.DriverCore
         {
             try
             {
-                //IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
+                IJavaScriptExecutor jsDriver = (IJavaScriptExecutor)driver;
                 string highlightJavascript = "arguments[0].style.border='2px solid red'";
-                Javascript.ExecuteScript(highlightJavascript, new object[] { e });
+                jsDriver.ExecuteScript(highlightJavascript, new object[] { e });
                 HtmlReport.Pass("Highlight element [" + e.ToString() + "] passed");
                 return e;
 
@@ -194,10 +198,7 @@ namespace CoreFramework.DriverCore
             }
         }
 
-        public string GetTextFromElem(string locator)
-        {
-            return driver.FindElement(By.XPath(locator)).Text;
-        }
+
         public void SelectOption(string locator, string key)
         {
             try
@@ -218,15 +219,14 @@ namespace CoreFramework.DriverCore
 
             try
             {
-                HighlightElem(FindElementByXpath(actual));
                 Assert.That(actual, Is.EqualTo(expected));
                 HtmlReport.Pass("Actual result [" + actual + "] " +
-                    "is the same as [" + expected + "]");
+                    "is the same as [" + expected + "]", TakeScreenShot());
             }
             catch (Exception excep)
             {
                 HtmlReport.Fail("Actual result [" + actual + "] " +
-                    "is not the same as [" + expected + "]");
+                    "is not the same as [" + expected + "]", TakeScreenShot());
                 throw excep;
 
             }
