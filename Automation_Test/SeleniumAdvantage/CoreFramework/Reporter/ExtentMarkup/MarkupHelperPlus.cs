@@ -13,7 +13,7 @@ namespace CoreFramework.Reporter.ExtentMarkup
     {
         public static IMarkup CreateAPIRequestLog(API_Request request, API_Response response)
         {
-            return new API_RequetLog(request, response);
+            return new API_RequestLog(request, response);
         }
 
     }

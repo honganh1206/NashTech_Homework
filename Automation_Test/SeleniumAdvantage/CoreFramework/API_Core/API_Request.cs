@@ -22,7 +22,7 @@ namespace CoreFramework.API_Core
     public class API_Request
     {
 
-        // ------------------------------- WORKING WITH URL/ATTRIBUTES -------------------------------
+        // ------------------------------- WORKING WITH URL -------------------------------
 
         public HttpWebRequest request;
         public string url { get; set; }
@@ -42,7 +42,7 @@ namespace CoreFramework.API_Core
             requestBody = "";
             formData = "";
         }
-        // ------------------------------- REQUEST ACTIONS/METHODS -------------------------------
+        // ------------------------------- REQUEST ACTIONS -------------------------------
 
 
         /////// ADD
@@ -151,9 +151,12 @@ namespace CoreFramework.API_Core
             {
                 IAsyncResult asyncResult = request.BeginGetResponse(null, null);
                 asyncResult.AsyncWaitHandle.WaitOne();
+
+                // Request 4 postman assignment went wrong here?
                 var httpResponse = (HttpWebResponse)request.EndGetResponse(asyncResult);
                 API_Response response = new API_Response(httpResponse);
                 HtmlReport.CreateAPIRequestLog_(this, response);
+                HtmlReport.MarkupPassJson(response.responseBody);
                 return response;
 
             }
@@ -162,14 +165,6 @@ namespace CoreFramework.API_Core
                 throw e;
             }
         }
-
-        //public API_Response Post()
-        //{
-        //    API_Request request = (API_Request)JsonConvert.DeserializeObject
-        //        <API_Request>(SendRequest().ToString());
-        //    return request;
-
-        //}
     }
 }
 

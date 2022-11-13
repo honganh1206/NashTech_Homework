@@ -7,7 +7,7 @@ namespace RookiesTest.TestSetup
         [SetUp]
         public void SetUp()
         {
-            _driver.Url = "https://www.saucedemo.com/";
+            _driver.Url = "https://demo.guru99.com/v4/index.php";
         }
         [TearDown]
         public void TearDown()

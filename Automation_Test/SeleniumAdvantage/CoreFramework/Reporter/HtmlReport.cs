@@ -12,8 +12,7 @@ namespace CoreFramework.Reporter
 {
     internal class HtmlReport
     {
-        // VARS
-        private static int testCaseIndex;
+        //private static int testCaseIndex;
         //private static string testCaseName;
         private static ExtentReports _report;
         private static ExtentTest extentTestSuite;
@@ -22,7 +21,6 @@ namespace CoreFramework.Reporter
 
         // ------------------------------- CREATE EXTENTREPORT  -------------------------------
 
-        // Tránh tạo report trùng => Luôn có 1 obj duy nhất
         public static ExtentReports createReport()
         {
             // Check if report is initialized
@@ -103,38 +101,41 @@ namespace CoreFramework.Reporter
         }
 
         // PASS OR FAIL
-        // Pass with no screenshot
+
         public static void Pass(string des)
         {
+            // Pass with no screenshot
             GetTest().Pass(des);
             TestContext.WriteLine(des);
-            //HtmlReport.MarkupPassLabel(des);
+            //MarkupPassLabel(des);
         }
-        // Pass with screenshot
+
         public static void Pass (string des, string path)
         {
+            // Pass with screenshot
             GetTest().Pass(des).AddScreenCaptureFromPath(path);
             TestContext.WriteLine(des);
+            //MarkupPassLabel(des);
         }
-        // normal fail message
+
         public static void Fail(string des)
         {
-
+            // normal fail message
             GetTest().Fail(des);
             TestContext.WriteLine(des);
         }
 
-        // add path to screenshot
         public static void Fail(string des, string path)
         {
 
+            // fail message with a screenshot
             GetTest().Fail(des).AddScreenCaptureFromPath(path);
             TestContext.WriteLine(des);
         }
-        // add failed example? and path to screenshot
+
         public static void Fail (string des, string ex, string path)
         {
-
+            // add failed example? and path to screenshot
             GetTest().Fail(des).Fail(ex).AddScreenCaptureFromPath(path);
             TestContext.WriteLine(des);
         }
@@ -173,64 +174,34 @@ namespace CoreFramework.Reporter
         //     */
         //    GetTest().Info(m);
         //}
-        public static void MarkupPassJson()
+        public static void MarkupPassJson(string json)
         {
-            var json = "{'foo':'bar':'foos':['b','a','r'], " +
-                "'bar':{'foo':'bar', 'bar':false, 'foobar':1234}}";
-            GetTest().Info(MarkupHelper.CreateCodeBlock(json, CodeLanguage.Json));
+          GetTest().Info(MarkupHelper.CreateCodeBlock(json, CodeLanguage.Json));
         }
-        public static void MarkupTable()
+        public static void MarkupTable(string[][] someInts)
         {
-            string[][] someInts = new string[][] {
-                new string[] {
-                    "<label> HAHAHA </label>"}
-            };
-            var m = MarkupHelper.CreateTable(someInts);
-            GetTest().Info(m);
+            GetTest().Info(MarkupHelper.CreateTable(someInts));
         }
         // LABELS
-        public static void MarkupPassLabel()
+        public static void MarkupPassLabel(string text)
         {
-            var text = "Passed";
-            var m = MarkupHelper.CreateLabel(text, ExtentColor.Green);
-            GetTest().Pass(m);
+            GetTest().Pass(MarkupHelper.CreateLabel(text, ExtentColor.Green));
         }
-        public static void MarkupFailLabel()
+        public static void MarkupFailLabel(string text)
         {
-            var text = "Failed";
-            var m = MarkupHelper.CreateLabel(text, ExtentColor.Red);
-            GetTest().Fail(m);
+            GetTest().Fail(MarkupHelper.CreateLabel(text, ExtentColor.Red));
         }
-        public static void MarkupWarningLabel()
+        public static void MarkupWarningLabel(string text)
         {
-            var text = "Warning";
-            var m = MarkupHelper.CreateLabel(text, ExtentColor.Orange);
-            GetTest().Warning(m);
+            GetTest().Warning(MarkupHelper.CreateLabel(text, ExtentColor.Orange));
         }
-        public static void MarkupSkipLabel()
+        public static void MarkupSkipLabel(string text)
         {
-            var text = "Skipped";
-            var m = MarkupHelper.CreateLabel(text, ExtentColor.Blue);
-            GetTest().Skip(m);
+            GetTest().Skip(MarkupHelper.CreateLabel(text, ExtentColor.Blue));
         }
-        public static void MarkupXML()
+        public static void MarkupXML(string code)
         {
-            string code = "<root>" +
-                    "\n    <Person>" +
-                    "\n        <Name>Joe Doe</Name>" +
-                    "\n        <StartDate>2007-01-01</StartDate>" +
-                    "\n        <EndDate>2009-01-01</EndDate>" +
-                    "\n        <Location>London</Location>" +
-                "\n    </Person>                    " +
-                "\n    <Person>" +
-                    "\n        <Name>John Smith</Name>" +
-                    "\n        <StartDate>2012-06-15</StartDate>" +
-                    "\n        <EndDate>2014-12-31</EndDate>" +
-                    "\n        <Location>Cardiff</Location>" +
-                "\n    </Person>" +
-            "\n</root>";
-            var m = MarkupHelper.CreateCodeBlock(code, CodeLanguage.Xml);
-            GetTest().Pass(m);
+            GetTest().Info(MarkupHelper.CreateCodeBlock(code, CodeLanguage.Xml));
         }
 
         // ------------------------------- API  -------------------------------

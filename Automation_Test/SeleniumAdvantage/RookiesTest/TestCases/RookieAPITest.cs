@@ -6,7 +6,7 @@ using RookiesTest.TestSetup;
 namespace RookiesTest
 {
     [TestFixture]
-    public class RookieAPITest : RookieTest_ProjectNunitTestSetup
+    public class RookieAPITest : RookieTest_APITestSetup
     {
 
         [Test]
