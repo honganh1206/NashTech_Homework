@@ -1,7 +1,10 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.MarkupUtils;
 using AventStack.ExtentReports.Reporter;
+using CoreFramework.API_Core;
+using CoreFramework.Reporter.ExtentMarkup;
 using Microsoft.AspNetCore.Http;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using NUnit.Framework;
 
 
@@ -137,11 +140,11 @@ namespace CoreFramework.Reporter
         }
 
         // INFO
-        public static void Info(string des)
-        {
-            GetTest().Info(des);
-            TestContext.WriteLine(des);
-        }
+        //public static void Info(string des)
+        //{
+        //    GetTest().Info(des);
+        //    TestContext.WriteLine(des);
+        //}
         //public static void Info(HttpWebRequest request, HttpWebResponse response)
         //{
         //    GetTest().Info(MarkupHelperPlus.CreateRequest(request, response));
@@ -162,6 +165,7 @@ namespace CoreFramework.Reporter
 
         //public static void MarkUpHtml()
         //{
+        // Inject HTML code to report
         //    var htmlMarkUp = HtmlInjector.CreateHtml();
         //    var m = MarkupHelper.CreateLabel(htmlMarkUp, ExtentColor.Transparent);
         //    /* Similar syntax to Java
@@ -227,6 +231,13 @@ namespace CoreFramework.Reporter
             "\n</root>";
             var m = MarkupHelper.CreateCodeBlock(code, CodeLanguage.Xml);
             GetTest().Pass(m);
+        }
+
+        // ------------------------------- API  -------------------------------
+
+        public static void CreateAPIRequestLog_(API_Request request, API_Response response)
+        {
+            GetTest().Info(MarkupHelperPlus.CreateAPIRequestLog(request, response));
         }
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CoreFramework.NUnitTestSetup;
-using NUnit.Framework;
+﻿using CoreFramework.NUnitTestSetup;
 
 namespace RookiesTest.TestSetup
 {
@@ -13,11 +7,12 @@ namespace RookiesTest.TestSetup
         [SetUp]
         public void SetUp()
         {
-            _driver.Url = "https://demo.guru99.com/v4/";
+            _driver.Url = "https://www.saucedemo.com/";
         }
         [TearDown]
         public void TearDown()
         {
         }
     }
+
 }

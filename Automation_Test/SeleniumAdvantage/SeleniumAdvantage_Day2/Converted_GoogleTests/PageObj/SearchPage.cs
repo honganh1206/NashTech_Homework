@@ -14,7 +14,7 @@ namespace SeleniumAdvantage_Day2.PageObj
         {
         }
         //
-        private readonly string searchBarLocator = "//*[contains(@title,'Tìm kiếm')]";
+        private string searchBarLocator = "//*[contains(@title,'Tìm kiếm')]";
         public void InputSearch(string Search)
         {
             SendKeys_(searchBarLocator, Search);

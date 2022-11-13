@@ -13,9 +13,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = JSON.parse(responseBody)\r",
-							"var array = Object.values(jsonData)[0]\r",
-							"var generate_id = array[0].id\r",
+							"var jsonData = JSON.parse(responseBody) // return an obj (dict?) with one key-value with key todo an values as an array of 10 todos\r",
+							"var array = Object.values(jsonData)[0] // get the value of the first key-value pair \r",
+							"// Two ids for post and delete\r",
+							"var generate_id = array[0].id // get the id of the value (now is a dict with 4 key-value pairs which are id/title/doneStatus/description)\r",
 							"var delete_id = array[0].id\r",
 							"\r",
 							"postman.setEnvironmentVariable(\"generate_id\", generate_id)\r",
