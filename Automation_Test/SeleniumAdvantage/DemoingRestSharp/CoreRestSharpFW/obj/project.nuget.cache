@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+0ryYgfkCMsSBvLoBHbzsKGeoVJMTb+U6eDa5G49+SyvVlLVVoLa9Hf+4WN8pvLJzN1YzFAMEShXvQUcJist8Q==",
+  "dgSpecHash": "CqxBkIOhpJ81FZDXe2B6o6bYCCfGxrJMzhzIdRsDxYm+h12W9YdEu5o5KQQFxxJ6gqimKSVc0bgM5cVzQ3mfoQ==",
   "success": true,
-  "projectFilePath": "D:\\NashTech\\Rookies\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj",
+  "projectFilePath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\dnsclient\\1.2.0\\dnsclient.1.2.0.nupkg.sha512",

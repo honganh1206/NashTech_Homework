@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NashTech\\Rookies\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj": {}
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj": {}
   },
   "projects": {
-    "D:\\NashTech\\Rookies\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj": {
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NashTech\\Rookies\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj",
+        "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj",
         "projectName": "DemoRSTest",
-        "projectPath": "D:\\NashTech\\Rookies\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj",
+        "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\DemoRSTest\\DemoRSTest.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\NashTech\\Rookies\\DemoingRestSharp\\DemoRSTest\\obj\\",
+        "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\DemoRSTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

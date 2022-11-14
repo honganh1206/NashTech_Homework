@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NashTech\\Rookies\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj": {}
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj": {}
   },
   "projects": {
-    "D:\\NashTech\\Rookies\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj": {
+    "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NashTech\\Rookies\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj",
+        "projectUniqueName": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj",
         "projectName": "CoreRestSharpFW",
-        "projectPath": "D:\\NashTech\\Rookies\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj",
+        "projectPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\CoreRestSharpFW\\CoreRestSharpFW.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\NashTech\\Rookies\\DemoingRestSharp\\CoreRestSharpFW\\obj\\",
+        "outputPath": "D:\\NashTech\\Rookies\\NashTech_Homework\\Automation_Test\\SeleniumAdvantage\\DemoingRestSharp\\CoreRestSharpFW\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

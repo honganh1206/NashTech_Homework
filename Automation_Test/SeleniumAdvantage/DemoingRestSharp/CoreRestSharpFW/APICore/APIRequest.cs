@@ -14,20 +14,17 @@ namespace CoreRestSharpFW.APICore
 
         public RestRequest request { get; set; }
         public RestClient client { get; set; }
-        public string url { get; set; }
         public string requestBody { get; set; }
         public string formData { get; set; }
 
 
         public APIRequest()
         {
-            url = "";
             requestBody = "";
             formData = "";
         }
         public APIRequest(string baseUrl)
         {
-            this.url = baseUrl;
             requestBody = "";
             formData = "";
         }
@@ -54,26 +51,17 @@ namespace CoreRestSharpFW.APICore
             this.requestBody = body;
             return this;
         }
-        public RestClient SetURL(string url)
+
+        public APIRequest AddParameter(string key, string value)
         {
-            this.url = url;
-            client = new RestClient(url);
-            return client;
-        }
-        public APIRequest SetRequestParameter(string key, string value)
-        {
-            if (url.Contains("?"))
-            {
-                url += "?" + key + "=" + value;
-            }
-            else
-            {
-                // If there is already a parameter
-                url += "&" + key + "=" + value;
-            }
+            request.AddHeader(key, value);
             return this;
         }
 
-
+        public APIRequest SendGETRequest()
+        {
+            request = new RestRequest("get", Method.Get);
+            return request;
+        }
     }
 }
