@@ -90,9 +90,16 @@ namespace SeleniumAdvantage_Day3.Services
         public string pathRequest10 = "/todos";
         public API_Response Request10()
         {
+            var reqObj = new Todo();
+            reqObj.Title = "create new todo";
+            reqObj.DoneStatus = true;
+            reqObj.Description = "created via postman";
+
+            string requestBody = JsonConvert.SerializeObject(reqObj);
             API_Response response = new API_Request().
                    SetURL("https://apichallenges.herokuapp.com" + pathRequest10)
-                   .SetRequestParameter("doneStatus", "true")
+                   .SetRequestParameter("doneStatus", "false")
+                   .SetBody(requestBody)
                    .SendRequest();
             return response;
 
