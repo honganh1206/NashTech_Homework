@@ -68,6 +68,10 @@ namespace CoreFramework.DriverCore
         {
             return driver.FindElement(By.XPath(locator)).Text;
         }
+        public string GetTextFromElem(IWebElement e)
+        {   
+            return e.Text;
+        }
         //public string[] GetTextsFromElem(string locator)
         //{
         //    return driver.FindElements(GetXpath(locator)).Text;
@@ -84,7 +88,6 @@ namespace CoreFramework.DriverCore
         {
             return driver.FindElements(GetXpath(locator));
         }
-
 
 
         public void PressEnter(string locator)
@@ -117,12 +120,11 @@ namespace CoreFramework.DriverCore
         }
         public void Click(string locator)
         {
-
             try
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
                 var btnToClick = wait.Until(
-                    ExpectedConditions.ElementIsVisible(GetXpath(locator)));
+                    ExpectedConditions.ElementToBeClickable(GetXpath(locator)));
                 HighlightElem(btnToClick);
                 btnToClick.Click();
                 HtmlReport.Pass("Clicking on element [" + locator + "] passed");
@@ -134,17 +136,22 @@ namespace CoreFramework.DriverCore
                 throw excep;
             }
         }
-        public void Click(IWebElement e)
+        public void Click_(string locator)
         {
+            // Use javascriptexecutor to avoid ClickInterceptedException
             try
             {
+                IWebElement e = FindElementByXpath(locator);
                 HighlightElem(e);
-                e.Click();
-                HtmlReport.Pass("Clicking on element [ " + e.ToString() + " ] passed");
+                IJavaScriptExecutor executor = (IJavaScriptExecutor)driver;
+                executor.ExecuteScript("arguments[0].click();", e);
+
+                HtmlReport.Pass("Clicking on element [" + locator + "] passed");
+
             }
             catch (Exception excep)
             {
-                HtmlReport.Fail("Clicking on element [ " + e.ToString() + " ] failed");
+                HtmlReport.Fail("Clicking on element [" + locator + "] failed");
                 throw excep;
             }
         }
@@ -161,21 +168,6 @@ namespace CoreFramework.DriverCore
             catch (Exception ex)
             {
                 HtmlReport.Fail("Double click on element " + e.ToString() + " failed with");
-                throw ex;
-            }
-        }
-        public void SendKeys_(IWebElement e, string key)
-        {
-            // Param IWebElem
-            try
-            {
-                e.SendKeys(key);
-                HtmlReport.Pass("Sendkey into element " + e.ToString + " successfuly", TakeScreenShot());
-
-            }
-            catch (Exception ex)
-            {
-                HtmlReport.Fail("Sendkey into element " + e.ToString + " failed");
                 throw ex;
             }
         }

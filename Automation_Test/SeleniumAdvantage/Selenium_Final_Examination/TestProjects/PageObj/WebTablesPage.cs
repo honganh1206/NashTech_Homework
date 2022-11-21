@@ -62,7 +62,7 @@ namespace RookiesTest.PageObj
             foreach (IWebElement cell in allCells)
             {
                 // go through each cell and add text values to a list of string
-                valuesFromCells.Add(cell.Text);
+                valuesFromCells.Add(GetTextFromElem(cell));
 
             }
             // assign each value from cell to an EmployeeInfo object
