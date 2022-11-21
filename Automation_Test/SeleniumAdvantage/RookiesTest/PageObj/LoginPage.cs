@@ -9,10 +9,16 @@ namespace RookiesTest.PageObj
         {
         }
 
-        private readonly string userNameLocator = "//input[@name = 'uid']";
-        public void InputUserName(string Username)
+        private string tfUserName = "//input[@name = 'uid']";
+        private string tfPassword = "//input[@name = 'password']";
+        private string btnLogin = "//button[@name = 'btnLogin']";
+
+
+        public void doLogin(string Username, string Password)
         {
-            SendKeys_(userNameLocator, Username);
+            SendKeys_(tfUserName, Username);
+            SendKeys_(tfPassword, Password);
+            Click(btnLogin);
         }
     }
 }

@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Automation Test Report</title>
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@3da944e596e81f10ac6c1042c792af8a5a741023/commons/img/logo.png">
+  <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@8539670db814bf19a0ddbe9a6d19058aea0cf981/spark/css/spark-style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa  standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">Automation Test Report</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">21/11/2022 3:28:20 CH</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('tag-view')">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row test-view">
+    <div class="test-list">
+        <div class="test-list-tools">
+            <ul class="tools pull-left">
+                <li>
+                    <a href="">
+                        <span class="font-size-14">Tests</span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																				<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+                <li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-user"></i>
+					</a>
+					<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+							<a class="dropdown-item" href="#">HongAnhPham</a>
+					</ul>
+                </li>
+								<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-tag"></i>
+					</a>
+					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+							<a class="dropdown-item" href="#">SeleniumFinalTest</a>
+					</ul>
+                </li>
+								<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-tablet"></i>
+					</a>
+					<ul id="device-toggle" class="dropdown-menu dropdown-md p-v-0">
+							<a class="dropdown-item" href="#">PC</a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="test-list-wrapper scrollable">
+            <ul class="test-list-item">
+					<li class="test-item" status="pass" author="HongAnhPham" device="PC" tag="SeleniumFinalTest" test-id="1"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">TestProject.TestCases.ElementsPageTest</p> 
+								<p class="duration text-sm">0h:0m:6s+211ms</p> 
+								<span class="datetime">15:28:20 CH</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">TestProject.TestCases.ElementsPageTest</h5>
+										<span class='badge badge-success'>21/11/2022 3:28:20 CH</span>
+										<span class='badge badge-danger'>21/11/2022 3:28:26 CH</span>
+										<span class='badge badge-default'>0h:0m:6s+211ms</span>
+									</div>
+									<div class="m-t-15">
+		                                	<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> HongAnhPham</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> SeleniumFinalTest</span> 	
+						<span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> PC</span> 
+	</div>
+
+									</div>
+																	</div>
+							</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">TestElementsPage</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:26</td>
+				<td>
+Go to URLhttps://demoqa.com									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:26</td>
+				<td>
+Highlight element [Element (id = 94314202-3c6d-4aed-a42c-7462ce480b92)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:26</td>
+				<td>
+Clicking on element [(//h5[text()='Elements'])] passed									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="HongAnhPham" device="PC" tag="SeleniumFinalTest" test-id="3"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">TestProject.TestCases.WebTablesPageTest</p> 
+								<p class="duration text-sm">0h:0m:25s+836ms</p> 
+								<span class="datetime">15:28:30 CH</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-pass">TestProject.TestCases.WebTablesPageTest</h5>
+										<span class='badge badge-success'>21/11/2022 3:28:30 CH</span>
+										<span class='badge badge-danger'>21/11/2022 3:28:56 CH</span>
+										<span class='badge badge-default'>0h:0m:25s+836ms</span>
+									</div>
+									<div class="m-t-15">
+		                                	<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> HongAnhPham</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> SeleniumFinalTest</span> 	
+						<span class="badge badge-pill badge-default"><i class="fa fa-tablet"></i> PC</span> 
+	</div>
+
+									</div>
+																	</div>
+							</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Scenario1</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:36</td>
+				<td>
+Go to URLhttps://demoqa.com									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:36</td>
+				<td>
+Highlight element [Element (id = e77ad9c7-eae0-4f88-a3b2-50d33a247e68)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:36</td>
+				<td>
+Clicking on element [(//h5[text()='Elements'])] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:36</td>
+				<td>
+Highlight element [Element (id = 5dd579b3-a7d1-4476-8923-565efc1daab0)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:37</td>
+				<td>
+Clicking on element [//span[text()='Web Tables']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:37</td>
+				<td>
+Highlight element [Element (id = 059eec6d-6be6-468c-92af-3e0521bcd228)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:37</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:37</td>
+				<td>
+Element [Element (id = 059eec6d-6be6-468c-92af-3e0521bcd228)] is displayed									</td>
+			</tr>
+	</tbody>
+</table>
+						<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152837.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152837.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152837.png'>					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Scenario2</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Go to URLhttps://demoqa.com									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Highlight element [Element (id = 0359ebea-5703-4f9d-ae71-2dbf318c26f2)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Clicking on element [(//h5[text()='Elements'])] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Highlight element [Element (id = 06ea79f8-c6fe-4929-9f9b-59562bb12177)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Clicking on element [//span[text()='Web Tables']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Highlight element [Element (id = ff9b144d-ecb6-462e-a8a7-64e91fc5c7cf)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Element [Element (id = ff9b144d-ecb6-462e-a8a7-64e91fc5c7cf)] is displayed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Highlight element [Element (id = 829fbd99-0e09-4118-b194-ae736524641d)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Clicking on element [//button[contains(@id, 'addNewRecordButton')]] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Highlight element [Element (id = 3b1c337c-01a2-49f5-b150-987d28365ae7)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Sendkeys to element [//input[@id = 'firstName']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:44</td>
+				<td>
+Highlight element [Element (id = fc7e192e-baa8-4066-9061-3ce3bc00662b)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Sendkeys to element [//input[@id = 'lastName']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Highlight element [Element (id = 09668317-d31e-478b-aa42-fac9cb26fc87)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Sendkeys to element [//input[@id = 'userEmail']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Highlight element [Element (id = 7ba9f4f5-e4fe-4f67-ac65-37ed5efd988c)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Sendkeys to element [//input[@id = 'age']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:45</td>
+				<td>
+Highlight element [Element (id = b7580fb1-d55b-471c-a0e2-5bb0a85df4e7)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Sendkeys to element [//input[@id = 'salary']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Highlight element [Element (id = 3d05ffeb-9f5b-409d-abd0-91585853e5dc)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Sendkeys to element [//input[@id = 'department']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Highlight element [Element (id = 34669f72-5acf-44eb-b46f-c305ed0b39e0)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:46</td>
+				<td>
+Clicking on element [//button[@id = 'submit']] passed									</td>
+			</tr>
+	</tbody>
+</table>
+						<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152844.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152844.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152844.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152844.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152844.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152844.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152845.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152846.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152846.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152846.png'>					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">Scenario3</div>
+						<div class="status-avatar float-right pass-bg">
+							<i class="fa fa-check text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Go to URLhttps://demoqa.com									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Highlight element [Element (id = 41230049-e5fa-4cbc-bbf9-dbfdd8a80bf5)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Clicking on element [(//h5[text()='Elements'])] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Highlight element [Element (id = d08af6df-860b-4d1b-99a2-a1f1920cf2c7)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Clicking on element [//span[text()='Web Tables']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Highlight element [Element (id = 47c9194d-6cc5-48c9-b373-b016f3c94e92)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Element [Element (id = 47c9194d-6cc5-48c9-b373-b016f3c94e92)] is displayed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:53</td>
+				<td>
+Highlight element [Element (id = 11b4f8c3-a500-4126-9353-aa54dc40a513)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clicking on element [(//span[@title = 'Edit'])[3]] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = 5fee81ab-1296-4e77-a381-98ec3d5ea551)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clear previous input in element [//input[@id = 'firstName']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = ea185e77-a7b1-441a-ae05-02067ea4412f)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clear previous input in element [//input[@id = 'lastName']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = fc8ac9f7-e4b6-44da-ae21-b45cf3416718)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clear previous input in element [//input[@id = 'userEmail']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = 5f561258-90a2-4a03-bafc-bf5cf9fe938d)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clear previous input in element [//input[@id = 'age']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = 07562a71-d252-4d6f-8c2f-332cba842dfa)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clear previous input in element [//input[@id = 'salary']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = fe73e0d7-bd12-49eb-8350-d58320aa3007)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clear previous input in element [//input[@id = 'department']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = 5fee81ab-1296-4e77-a381-98ec3d5ea551)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Take screenshot successfully									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Sendkeys to element [//input[@id = 'firstName']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Highlight element [Element (id = 3723f02f-8739-4b9b-bc6f-ff4444a11b86)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:54</td>
+				<td>
+Clicking on element [//button[@id = 'submit']] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:56</td>
+				<td>
+Highlight element [Element (id = bfd1acf6-0e7c-4547-b475-2b5d68659dd2)] passed									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>15:28:56</td>
+				<td>
+Clicking on element [(//span[@title = 'Delete'])[3]] passed									</td>
+			</tr>
+	</tbody>
+</table>
+						<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152853.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152853.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152853.png'><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152854.png' src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152854.png' data-src='D:\NashTech\Rookies\NashTech_Homework\Automation_Test\SeleniumAdvantage\Selenium_Final_Examination\TestProjects\bin\Debug\net6.0\..\..\..\Reports\Latest Reports\Screenshot/screenshot_20221121152854.png'>					</div>
+				</div>
+			</div>
+	</div>
+
+</div>
+						</div>
+					</li>
+            </ul>    
+        </div>
+    </div>
+    <div class="test-content scrollable">
+        <div class="test-content-tools">
+            <ul>
+                <li>
+                    <a class="back-to-test" href="javascript:void(0)">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-content-detail">
+            <div class="detail-body"></div>
+        </div>
+    </div>
+</div>
+<div class="test-wrapper row tag-view attributes-view">
+    <div class="test-list">
+        <div class="test-list-tools">
+            <ul class="tools pull-left">
+                <li>
+                    <a href="">
+                        <span class="font-size-14">Tags</span>
+                    </a>
+                </li> 
+            </ul>
+            <ul class="tools text-right">
+                <li>
+                    <a href="#">
+                        <span class="badge badge-primary">1</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-list-wrapper scrollable">
+            <ul class="test-list-item">
+
+<li class="test-item">
+  <div class="open-test">
+    <div class="test-detail">
+      <p class="name">SeleniumFinalTest</p>
+      <p class="duration text-sm">2 tests</p>
+      <span class="datetime">
+ <span class='badge badge-success'>2</span>                               </span>
+    </div>
+  </div>
+  <div class="test-contents d-none">
+    <div class="info">
+      <h4>SeleniumFinalTest</h4>
+ <span class='badge badge-success'>2 passed</span>                       </div>
+    <table class='table table-sm mt-4'>
+      <thead>
+        <tr>
+          <th class="status-col">Status</th>
+          <th class="timestamp-col">Timestamp</th>
+          <th>TestName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>15:28:20</td>
+          <td class='linked' test-id='1' root-id="1">
+            <a href="#">TestProject.TestCases.ElementsPageTest</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>15:28:30</td>
+          <td class='linked' test-id='3' root-id="3">
+            <a href="#">TestProject.TestCases.WebTablesPageTest</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>            </ul>    
+        </div>
+    </div>
+    <div class="test-content scrollable">
+        <div class="test-content-tools">
+            <ul>
+                <li>
+                    <a class="back-to-test" href="javascript:void(0)">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="test-content-detail">
+            <div class="detail-body"></div>
+        </div>
+    </div>
+</div>										<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tests</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='parent-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'>
+	                    <b>2</b> tests passed
+                    </small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> tests failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+	                <div class="">
+	                    <canvas id='child-analysis' width='115' height='90'></canvas>
+	                </div>
+	            </div>
+	            <div class="card-footer">
+	                <div><small data-tooltip='100%'><b>4</b> steps passed</small></div>
+	                <div>
+	                    <small data-tooltip='0%'><b>0</b> steps failed, 
+	                    <b data-tooltip='0%'>0</b> others
+	                    </small>
+                    </div>
+	            </div>
+			</div>
+		</div>
+			</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Tests</h6>
+							<h2 class="font-size-28 font-weight-light">2</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>100%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Steps</h6>
+							<h2 class="font-size-28 font-weight-light">4</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+								<span>100%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Start</h6>
+							<h6 class="font-weight-light">21/11/2022 3:28:20 CH</h6>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+	                <div class="media justify-content-between">
+						<div>
+							<h6 class="card-title">Duration</h6>
+							<h6 class="font-weight-light">00:00:37.6789662</h6>
+							<span class="text-semibold text-danger font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-danger opacity-01"></i>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Author</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>HongAnhPham</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+				<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tags</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>SeleniumFinalTest</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+				<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Device</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>PC</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+			</div>
+</div>
+<script>
+	var statusGroup = {
+    parentCount: 2,
+		passParent: 2,
+		failParent: 0,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 0,
+		childCount: 4,
+		passChild: 4,
+		failChild: 0,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 0,
+		grandChildCount: 0,
+		passGrandChild: 0,
+		failGrandChild: 0,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 0,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 0,
+	};
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@cc89904c1a12065be1d08fc4994a258ef01b12bd/spark/js/scripts.js"></script>
+<script type='text/javascript'>
+	
+</script>
+</body>
+
+</html>

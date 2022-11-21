@@ -1,24 +1,17 @@
-﻿using RookiesTest.PageObj;
+﻿using OpenQA.Selenium;
+using RookiesTest.PageObj;
 using RookiesTest.TestSetup;
 
 namespace RookiesTest
 {
     [TestFixture]
-    public class LoginTest : RookieTest_ProjectNunitTestSetup
+    public class LoginTest : NUnitWebTestSetup
     {
-
         [Test]
         public void UserCanInputUserName()
         {
             LoginPage loginPage = new LoginPage(_driver);
-            loginPage.InputUserName("text");
-        }
-        [Test]
-        // Testing report with another test case
-        public void UserCanInputUserName2()
-        {
-            LoginPage loginPage = new LoginPage(_driver);
-            loginPage.InputUserName("text");
+            loginPage.doLogin("mngr454797", "EqajuhA");
         }
     }
 }

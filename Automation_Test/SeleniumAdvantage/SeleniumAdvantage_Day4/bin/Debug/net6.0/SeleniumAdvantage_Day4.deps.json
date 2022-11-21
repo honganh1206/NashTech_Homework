@@ -14,6 +14,7 @@
           "NUnit": "3.13.3",
           "NUnit.Analyzers": "3.5.0",
           "NUnit3TestAdapter": "4.3.0",
+          "Newtonsoft.Json": "13.0.1",
           "Selenium.Support": "4.5.1",
           "Selenium.WebDriver": "4.5.1",
           "Selenium.WebDriver.ChromeDriver": "107.0.5304.6200",

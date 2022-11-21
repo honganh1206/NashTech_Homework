@@ -19,6 +19,11 @@ namespace CoreFramework.DriverCore
             // this. means to the current instance of the class
             this.driver = driver;
         }
+        public void GoToUrl(string url)
+        {
+            driver.Navigate().GoToUrl(url);
+            HtmlReport.Pass("Go to URL" + url);
+        }
         // ------------------------------- MOVEMENTS -------------------------------
 
         public void MoveForward()
@@ -295,8 +300,25 @@ namespace CoreFramework.DriverCore
             //string currentTimeVN = DateTime.UtcNow.ToString("yyyy_MM_dd_HH_mm_ss");
             return currentTimeVN;
         }
+        // ------------------------------- VERIFYING  -------------------------------
 
+        public bool IsElementDisplay (string locator)
+        {
+            IWebElement e = driver.FindElement(GetXpath(locator));
 
+            if (e == null)
+            {
+                HtmlReport.Fail("Element is not displayed");
+                return false;
+            }
+            else
+            {
+                HighlightElem(e);
+                HtmlReport.Pass("Element [" + e.ToString() + "] is displayed", TakeScreenShot());
+                return true;
+            }
+
+        }
 
     }
 }
