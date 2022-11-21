@@ -93,7 +93,7 @@ namespace RookiesTest.PageObj
             }
             foreach(EmployeeInfo employee in listOfEmployees.ToList())
             {
-                // clear list elements from empty rows
+                // remove list elements from empty rows
                 if(employee.FirstName.Contains(" "))
                 {
                     listOfEmployees.Remove(employee);
@@ -157,6 +157,7 @@ namespace RookiesTest.PageObj
         public EmployeeInfo GetUpdatedEmployee(List<EmployeeInfo> listOfEmployees, 
             EmployeeInfo updatedEmployee, int index)
         {
+            // update employee of the chosen row
             EmployeeInfo updatedEmployee_ = ReturnUpdatedEmployee(updatedEmployee, index);
             listOfEmployees = ReturnListEmployeeInfo();
             foreach (EmployeeInfo employee in listOfEmployees)

@@ -18,7 +18,7 @@ namespace TestProject.TestCases
             HomePage homePage = new HomePage(_driver);
             homePage.GoToElementsPage();
             Assert.True(homePage.IsCorrectRedirect(), "Not correct URL");
-            
+            TestContext.WriteLine("Web is redirected correctly");
         }
         
     }

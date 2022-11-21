@@ -25,6 +25,7 @@ namespace TestProject.TestCases
             WebTablesPage webTablesPage = new WebTablesPage(_driver);
             Assert.True(webTablesPage.IsHeaderDisplayed(), "WebTable screen is not displayed");
             TestContext.WriteLine("WebTable screen is displayed");
+            
             //5. Given that there’re 3 employees existing in the system.
             //(you will see when go to the page)
             //-> verify the information of all employees is displayed correctly
